@@ -1,0 +1,73 @@
+import type { Listing, MortgageInput, MortgageResult } from '@/types';
+import { listings } from '@/data/listings';
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export function formatPrice(price: number, compact = false): string {
+  if (compact) {
+    if (price >= 1_000_000) return `$${(price / 1_000_000).toFixed(1)}M`;
+    if (price >= 1_000) return `$${(price / 1_000).toFixed(0)}K`;
+  }
+  return new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price);
+}
+
+export function formatAddress(address: string, city: string, provinceState: string, postalCode: string) {
+  return `${address}, ${city}, ${provinceState} ${postalCode}`;
+}
+
+export function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+export function calculateMortgage({ homePrice, downPayment, interestRate, amortization }: MortgageInput): MortgageResult {
+  const principal = homePrice - downPayment;
+  const monthlyRate = interestRate / 100 / 12;
+  const payments = amortization * 12;
+  const monthly = monthlyRate === 0
+    ? principal / payments
+    : (principal * monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
+  return {
+    monthlyPayment: monthly,
+    loanAmount: principal,
+    totalPayment: monthly * payments,
+    totalInterest: monthly * payments - principal,
+  };
+}
+
+export function getFeaturedListings(limit = 6): Listing[] {
+  return listings.filter(l => l.featured && l.propertyStatus === 'available').slice(0, limit);
+}
+
+export function getRelatedListings(listing: Listing, limit = 3): Listing[] {
+  return listings
+    .filter(l => l.id !== listing.id && l.city === listing.city && l.propertyType === listing.propertyType)
+    .slice(0, limit);
+}
+
+export function getListingsByCity(city: string, limit?: number): Listing[] {
+  const result = listings.filter(l => l.city.toLowerCase() === city.toLowerCase());
+  return limit ? result.slice(0, limit) : result;
+}
+
+export function generateId(): string {
+  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+}
+
+export function formatDate(date: string | Date): string {
+  return new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
+}
+
+export function mapFirebaseError(code: string): string {
+  const map: Record<string, string> = {
+    'auth/email-already-in-use': 'An account with this email already exists.',
+    'auth/invalid-email': 'Invalid email address.',
+    'auth/weak-password': 'Password must be at least 6 characters.',
+    'auth/user-not-found': 'No account found with this email.',
+    'auth/wrong-password': 'Incorrect password.',
+  };
+  return map[code] || 'An unexpected error occurred.';
+}
