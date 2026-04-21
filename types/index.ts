@@ -174,7 +174,11 @@ export interface MortgageInput {
   homePrice: number;
   downPayment: number;
   interestRate: number;
+<<<<<<< HEAD
+  amortizationYears: number;
+=======
   amortization: number;
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 }
 
 export interface MortgageResult {

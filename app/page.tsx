@@ -1,11 +1,67 @@
+<<<<<<< HEAD
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { Search, MapPin, TrendingUp, Shield, Clock, Star, ChevronRight, ArrowRight, Award, CheckCircle, Building2 } from 'lucide-react';
+=======
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, MapPin, TrendingUp, Shield, Clock, Star, ChevronRight, ArrowRight } from 'lucide-react';
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ListingCard } from '@/components/listings/ListingCard';
 import { AgentCard } from '@/components/agents/AgentCard';
 import { SectionHeader } from '@/components/ui/Display';
+<<<<<<< HEAD
+import { useListingsContext } from '@/context/ListingsContext';
+import { agents } from '@/data/agents';
+import { stats, testimonials, cities } from '@/data';
+
+const featuredAgents = agents.filter(a => a.featured).slice(0, 4);
+
+const companyStats = [
+  { value: '$3.2B+',  label: 'Total Sales Volume' },
+  { value: '12,400+', label: 'Families Served' },
+  { value: '4.9★',    label: 'Client Rating' },
+  { value: '97%',     label: 'On-Time Rate' },
+];
+
+const whyUs = [
+  { icon: Search,       title: 'Advanced Property Search',   desc: 'Filter by 15+ criteria. Find exactly what you\'re looking for — by city, neighbourhood, type, price, sqft, and lifestyle features.' },
+  { icon: Shield,       title: 'Verified Listings',          desc: 'Every property is independently verified by our team and updated in real time. No duplicates, no surprises.' },
+  { icon: TrendingUp,   title: 'Market Intelligence',        desc: 'Get neighbourhood-level pricing trends, days-on-market averages, and sale-to-list ratios to make informed decisions.' },
+  { icon: Clock,        title: '24/7 Agent Access',          desc: 'Our agents respond within 2 hours, 7 days a week. Schedule viewings, submit inquiries, and track your search any time.' },
+  { icon: Award,        title: 'Award-Winning Service',      desc: 'TRREB Top Brokerage 2022 & 2023. Recognized by Toronto Life, RECO, and the Globe & Mail for excellence in client service.' },
+  { icon: CheckCircle,  title: 'End-to-End Support',         desc: 'From first search to closing day — mortgage guidance, legal referrals, home inspection coordination, and post-sale support.' },
+];
+
+const processSteps = [
+  { num: '01', title: 'Browse & Save',         desc: 'Search 30+ curated GTA listings. Save your favourites and set up alerts for new properties matching your criteria.' },
+  { num: '02', title: 'Connect with an Agent', desc: 'Submit an inquiry in 30 seconds. Your dedicated agent responds within 2 hours with market insights and availability.' },
+  { num: '03', title: 'Tour Properties',       desc: 'Schedule private in-person viewings or 3D virtual tours on your schedule, any day of the week.' },
+  { num: '04', title: 'Close with Confidence', desc: 'Your agent negotiates on your behalf. We coordinate inspections, legal, and mortgage referrals so nothing falls through the cracks.' },
+];
+
+export default function HomePage() {
+  const router = useRouter();
+  const { listings, loading } = useListingsContext();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchType, setSearchType] = useState('');
+
+  const featured = listings.filter(l => l.featured && l.propertyStatus === 'available').slice(0, 6);
+
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (searchQuery) params.set('keyword', searchQuery);
+    if (searchType) params.set('listingType', searchType);
+    router.push(`/listings?${params.toString()}`);
+  }
+
+=======
 import { getFeaturedListings } from '@/utils';
 import { agents } from '@/data/agents';
 import { stats, testimonials, cities } from '@/data';
@@ -17,10 +73,101 @@ const featured = getFeaturedListings(6);
 const featuredAgents = agents.filter(a => a.featured).slice(0, 4);
 
 export default function HomePage() {
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
   return (
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
 
+<<<<<<< HEAD
+      {/* ── HERO ──────────────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80"
+            alt="Toronto skyline hero"
+            fill className="object-cover" priority unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/65 to-brand-dark" />
+          {/* Subtle grain overlay */}
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 512 512\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.15\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat' }} />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 text-center">
+          {/* Trust badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-900/70 border border-slate-700/80 backdrop-blur-sm mb-8">
+            <div className="flex -space-x-1.5">
+              {['photo-1573496359142-b8d87734a5a2','photo-1560250097-0b93528c311a','photo-1551836022-d5d88e9218df'].map((id, i) => (
+                <div key={i} className="relative w-6 h-6 rounded-full overflow-hidden border-2 border-slate-800">
+                  <Image src={`https://images.unsplash.com/${id}?w=50&h=50&fit=crop&face`} alt="agent" fill className="object-cover" unoptimized />
+                </div>
+              ))}
+            </div>
+            <span className="text-slate-300 text-xs">Trusted by <strong className="text-white">12,400+</strong> GTA families since 2010</span>
+          </div>
+
+          <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] mb-6 tracking-tight">
+            Southern Ontario's<br />
+            <span className="text-brand-gold italic">Premier Real Estate</span>
+          </h1>
+
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Buy, sell, or rent across Toronto, Mississauga, Oakville, Vaughan, and beyond.
+            Expert agents. Verified listings. Real results.
+          </p>
+
+          {/* Functional search bar */}
+          <form onSubmit={handleSearch} className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-2xl p-3 max-w-3xl mx-auto shadow-2xl">
+            <div className="flex flex-col sm:flex-row gap-2.5">
+              <div className="flex-1 flex items-center gap-2 bg-slate-800/80 rounded-xl px-4 h-12 border border-slate-700/50">
+                <MapPin className="w-4 h-4 text-brand-gold shrink-0" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  placeholder="City, neighbourhood, or address..."
+                  className="flex-1 bg-transparent text-slate-200 placeholder-slate-500 text-sm focus:outline-none"
+                />
+              </div>
+              <select
+                value={searchType}
+                onChange={e => setSearchType(e.target.value)}
+                className="h-12 px-4 bg-slate-800/80 border border-slate-700/50 rounded-xl text-sm text-slate-300 focus:outline-none cursor-pointer"
+              >
+                <option value="">Any Type</option>
+                <option value="sale">For Sale</option>
+                <option value="rent">For Rent</option>
+                <option value="new-development">New Development</option>
+              </select>
+              <button type="submit" className="h-12 px-7 rounded-xl bg-brand-gold text-slate-900 font-semibold text-sm flex items-center gap-2 hover:bg-amber-400 transition-colors whitespace-nowrap shadow-lg">
+                <Search className="w-4 h-4" /> Search
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-2.5 px-1">
+              {[
+                { label: 'Toronto Condos', q: 'Toronto', t: 'sale' },
+                { label: 'Oakville Estates', q: 'Oakville', t: '' },
+                { label: 'Vaughan New Dev', q: 'Vaughan', t: 'new-development' },
+                { label: 'Port Credit', q: 'Port Credit', t: '' },
+              ].map(tag => (
+                <button
+                  key={tag.label}
+                  type="button"
+                  onClick={() => { setSearchQuery(tag.q); setSearchType(tag.t); router.push(`/listings?keyword=${tag.q}${tag.t ? `&listingType=${tag.t}` : ''}`); }}
+                  className="text-xs px-3 py-1 rounded-full bg-slate-700/60 text-slate-400 hover:bg-brand-gold/20 hover:text-brand-gold transition-all border border-slate-700/40"
+                >
+                  {tag.label}
+                </button>
+              ))}
+            </div>
+          </form>
+
+          {/* Company stats */}
+          <div className="flex flex-wrap justify-center gap-8 mt-14">
+            {companyStats.map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="font-playfair text-3xl font-bold text-brand-gold">{s.value}</div>
+                <div className="text-xs text-slate-400 mt-0.5 tracking-wide">{s.label}</div>
+=======
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -80,11 +227,37 @@ export default function HomePage() {
               <div key={i} className="text-center">
                 <div className="text-3xl font-bold text-brand-gold font-playfair">{s.value}</div>
                 <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
               </div>
             ))}
           </div>
         </div>
 
+<<<<<<< HEAD
+        {/* Scroll cue */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5">
+          <div className="w-5 h-8 rounded-full border border-slate-600 flex items-start justify-center pt-1.5">
+            <div className="w-1 h-2 rounded-full bg-brand-gold animate-bounce" />
+          </div>
+          <span className="text-[10px] text-slate-600 tracking-widest uppercase">Scroll</span>
+        </div>
+      </section>
+
+      {/* ── CITIES ────────────────────────────────────────────────────────── */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader label="Service Areas" title="We Cover the Entire GTA"
+          subtitle="From downtown Toronto condos to Oakville estates — our agents know every street, every neighbourhood, every hidden gem." center />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+          {cities.map(city => (
+            <Link key={city.name} href={`/listings?city=${city.name}`}
+              className="group relative aspect-[3/2] rounded-2xl overflow-hidden">
+              <Image src={city.image} alt={city.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent" />
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-gold/40 rounded-2xl transition-colors duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="font-playfair text-lg font-bold text-white">{city.name}</h3>
+                <p className="text-xs text-slate-300 mt-0.5">{city.listingCount} properties</p>
+=======
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500">
           <div className="w-5 h-8 rounded-full border border-slate-600 flex items-start justify-center pt-1.5">
@@ -105,12 +278,36 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h3 className="font-playfair text-lg font-bold text-white">{city.name}</h3>
                 <p className="text-xs text-slate-300">{city.listingCount} properties</p>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
               </div>
             </Link>
           ))}
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* ── FEATURED LISTINGS ─────────────────────────────────────────────── */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-10">
+            <SectionHeader label="Featured Properties" title="Handpicked Excellence"
+              subtitle="Our agents' most coveted listings across the GTA's finest addresses." />
+            <Link href="/listings?sort=featured" className="hidden sm:flex items-center gap-2 text-sm text-brand-gold hover:text-amber-400 transition-colors whitespace-nowrap">
+              View All <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          {loading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from({length:6}).map((_,i) => (
+                <div key={i} className="bg-slate-800/40 border border-slate-700 rounded-xl aspect-[4/3] animate-pulse" />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featured.slice(0,6).map(listing => <ListingCard key={listing.id} listing={listing} />)}
+            </div>
+          )}
+=======
       {/* ── Featured Listings ─────────────────────────────────────────────── */}
       <section className="py-20 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -123,6 +320,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featured.map(listing => <ListingCard key={listing.id} listing={listing} />)}
           </div>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
           <div className="text-center mt-8 sm:hidden">
             <Link href="/listings?sort=featured" className="inline-flex items-center gap-2 text-sm text-brand-gold">
               View All Featured <ArrowRight className="w-4 h-4" />
@@ -131,6 +329,25 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* ── HOW IT WORKS ──────────────────────────────────────────────────── */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader label="Our Process" title="Finding Your Home, Simplified" center
+          subtitle="We've guided 12,400+ families through this process. Here's how it works." />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          {processSteps.map((step, i) => (
+            <div key={i} className="relative group">
+              <div className="p-6 bg-slate-800/40 border border-slate-700 rounded-2xl hover:border-brand-gold/30 transition-all h-full">
+                <div className="font-playfair text-5xl font-bold text-brand-gold/20 group-hover:text-brand-gold/30 transition-colors mb-4 leading-none">
+                  {step.num}
+                </div>
+                <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{step.desc}</p>
+              </div>
+              {i < processSteps.length - 1 && (
+                <ChevronRight className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-700 z-10" />
+              )}
+=======
       {/* ── Why PropVault ─────────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader label="Why Us" title="The PropVault Advantage" center subtitle="Built for the modern GTA buyer and investor — powerful tools, local expertise." />
@@ -147,11 +364,28 @@ export default function HomePage() {
               </div>
               <h3 className="font-semibold text-white mb-2">{item.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
             </div>
           ))}
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* ── WHY US ────────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader label="The PropVault Advantage" title="Why 12,400+ Families Choose Us" center />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+            {whyUs.map((item, i) => (
+              <div key={i} className="group p-6 rounded-2xl bg-slate-800/40 border border-slate-700 hover:border-brand-gold/40 hover:bg-slate-800/60 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
+                  <item.icon className="w-5 h-5 text-brand-gold" />
+                </div>
+                <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+=======
       {/* ── Agents ────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,10 +397,91 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {featuredAgents.map(agent => <AgentCard key={agent.id} agent={agent} />)}
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* ── AGENTS ────────────────────────────────────────────────────────── */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between mb-10">
+          <SectionHeader label="Meet the Team" title="GTA's Top Agents"
+            subtitle="48 experienced agents. 14 years of GTA expertise. Deep local knowledge in every market we serve." />
+          <Link href="/agents" className="hidden sm:flex items-center gap-2 text-sm text-brand-gold hover:text-amber-400 transition-colors">
+            All Agents <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          {featuredAgents.map(agent => <AgentCard key={agent.id} agent={agent} />)}
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ──────────────────────────────────────────────────── */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader label="Client Stories" title="What Our Clients Say" center />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {testimonials.slice(0, 3).map((t, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700 flex flex-col">
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-brand-gold text-brand-gold" />
+                  ))}
+                </div>
+                <p className="text-sm text-slate-300 leading-relaxed mb-5 italic flex-1">&ldquo;{t.text}&rdquo;</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-700">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center">
+                    <span className="text-brand-gold font-bold text-sm">{t.name[0]}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{t.name}</p>
+                    <p className="text-xs text-slate-500">{t.role} · {t.city}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Press logos */}
+          <div className="mt-16 pt-12 border-t border-slate-800">
+            <p className="text-center text-xs text-slate-600 uppercase tracking-widest mb-8">As Seen In</p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              {['Globe & Mail', 'Toronto Star', 'Toronto Life', 'BNN Bloomberg', 'TRREB'].map(name => (
+                <span key={name} className="text-slate-600 font-semibold text-sm tracking-wide hover:text-slate-400 transition-colors">{name}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ───────────────────────────────────────────────────────────── */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80" alt="CTA background" fill className="object-cover opacity-10" unoptimized />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-slate-900 to-brand-dark" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs tracking-widest uppercase mb-6">
+            <Building2 className="w-3.5 h-3.5" /> GTA's Most Trusted Brokerage
+          </span>
+          <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-white mb-4">
+            Ready to Find Your <span className="text-brand-gold italic">Dream Home?</span>
+          </h2>
+          <p className="text-slate-400 mb-10 text-lg max-w-2xl mx-auto">
+            Join 12,400+ GTA families who found their perfect property with PropVault.
+            Our agents respond within 2 hours, every day of the week.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/listings" className="inline-flex items-center justify-center gap-2 h-13 px-8 py-3.5 rounded-xl bg-brand-gold text-slate-900 font-semibold hover:bg-amber-400 transition-colors shadow-lg shadow-brand-gold/20 text-base">
+              <Search className="w-5 h-5" /> Browse All Listings
+            </Link>
+            <Link href="/agents" className="inline-flex items-center justify-center gap-2 h-13 px-8 py-3.5 rounded-xl border border-slate-600 text-slate-200 font-medium hover:border-brand-gold hover:text-brand-gold transition-all text-base">
+              Find an Agent <ChevronRight className="w-5 h-5" />
+            </Link>
+          </div>
+          <p className="text-slate-600 text-xs mt-8">No obligation. No pressure. Just expert guidance.</p>
+=======
       {/* ── Testimonials ──────────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader label="Reviews" title="What Our Clients Say" center />
@@ -210,6 +525,7 @@ export default function HomePage() {
               Find an Agent <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         </div>
       </section>
 

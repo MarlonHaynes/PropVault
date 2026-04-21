@@ -10,14 +10,44 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
+<<<<<<< HEAD
+          dark:    '#0f172a',
+          surface: '#1e293b',
+          gold:    '#c8a97e',
+          teal:    '#0f766e',
+=======
           dark: '#0f172a',
           surface: '#1e293b',
           gold: '#c8a97e',
           teal: '#0f766e',
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         },
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'Georgia', 'serif'],
+<<<<<<< HEAD
+        sans:     ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        mono:     ['var(--font-dm-mono)', 'monospace'],
+      },
+      animation: {
+        'slide-up': 'slideUp 0.25s ease-out both',
+        'fade-in':  'fadeIn 0.5s ease-out both',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
+      },
+      keyframes: {
+        slideUp: {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to:   { opacity: '1' },
+        },
+      },
+      scale: {
+        '102': '1.02',
+      },
+=======
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-dm-mono)', 'monospace'],
       },
@@ -35,6 +65,7 @@ const config: Config = {
           to: { opacity: '1' },
         },
       },
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
     },
   },
   plugins: [],

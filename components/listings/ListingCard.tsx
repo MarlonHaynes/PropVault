@@ -2,7 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Bed, Bath, Maximize2, Heart, MapPin, GitCompare } from 'lucide-react';
+<<<<<<< HEAD
+import { cn, formatPrice, getListingSlug } from '@/utils';
+=======
 import { cn, formatPrice, slugify } from '@/utils';
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 import { StatusBadge } from '@/components/ui/Display';
 import { useAuth } from '@/context/AuthContext';
 import { useSaved } from '@/context/SavedContext';
@@ -22,7 +26,11 @@ export function ListingCard({ listing, layout = 'grid' }: ListingCardProps) {
   const { toast } = useToast();
   const saved = isSaved(listing.id);
   const inCompare = isInCompare(listing.id);
+<<<<<<< HEAD
+  const slug = getListingSlug(listing);
+=======
   const slug = slugify(listing.title) + '-' + listing.id.slice(-4);
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 
   async function handleSave(e: React.MouseEvent) {
     e.preventDefault();

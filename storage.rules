@@ -1,0 +1,25 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // ── LISTING IMAGES ────────────────────────────────────────────────────────
+    // Only authenticated admins can upload/delete listing images
+    // Anyone can read/view listing images (public CDN)
+    match /listings/{listingId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null &&
+        request.resource.size < 10 * 1024 * 1024 &&  // Max 10MB per image
+        request.resource.contentType.matches('image/.*');
+      allow delete: if request.auth != null;
+    }
+
+    // ── USER AVATARS (future) ─────────────────────────────────────────────────
+    match /users/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null &&
+        request.auth.uid == userId &&
+        request.resource.size < 5 * 1024 * 1024 &&
+        request.resource.contentType.matches('image/.*');
+    }
+  }
+}

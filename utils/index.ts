@@ -71,3 +71,17 @@ export function mapFirebaseError(code: string): string {
   };
   return map[code] || 'An unexpected error occurred.';
 }
+<<<<<<< HEAD
+
+/**
+ * Get the canonical URL slug for a listing.
+ * Uses the listing's slug field if present, otherwise generates from title + numeric ID.
+ * This is the SINGLE source of truth for listing URLs — use everywhere.
+ */
+export function getListingSlug(listing: { id: string; slug?: string; title: string }): string {
+  if (listing.slug) return listing.slug;
+  const numericId = listing.id.replace(/[^0-9]/g, '') || listing.id.slice(-3);
+  return slugify(listing.title) + '-' + numericId;
+}
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175

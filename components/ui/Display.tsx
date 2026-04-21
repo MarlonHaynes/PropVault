@@ -27,8 +27,21 @@ export function StatusBadge({ status, className }: { status: PropertyStatus; cla
 }
 
 // ── PriceDisplay ─────────────────────────────────────────────────────────────
+<<<<<<< HEAD
+export function PriceDisplay({
+  price,
+  listingType,
+  original,
+  className,
+}: {
+  price: number;
+  listingType: string;
+  original?: number;
+  className?: string;
+=======
 export function PriceDisplay({ price, listingType, original, className }: {
   price: number; listingType: string; original?: number; className?: string;
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 }) {
   return (
     <div className={cn('flex items-baseline gap-2', className)}>
@@ -44,8 +57,23 @@ export function PriceDisplay({ price, listingType, original, className }: {
 }
 
 // ── SectionHeader ─────────────────────────────────────────────────────────────
+<<<<<<< HEAD
+export function SectionHeader({
+  label,
+  title,
+  subtitle,
+  center = false,
+  light = false,
+}: {
+  label?: string;
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+  light?: boolean;
+=======
 export function SectionHeader({ label, title, subtitle, center = false, light = false }: {
   label?: string; title: string; subtitle?: string; center?: boolean; light?: boolean;
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 }) {
   return (
     <div className={cn(center && 'text-center')}>
@@ -54,10 +82,19 @@ export function SectionHeader({ label, title, subtitle, center = false, light = 
           {label}
         </span>
       )}
+<<<<<<< HEAD
+      <h2
+        className={cn(
+          'font-playfair text-3xl lg:text-4xl font-bold mt-1',
+          light ? 'text-slate-900' : 'text-white'
+        )}
+      >
+=======
       <h2 className={cn(
         'font-playfair text-3xl lg:text-4xl font-bold mt-1',
         light ? 'text-slate-900' : 'text-white'
       )}>
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         {title}
       </h2>
       {subtitle && (
@@ -75,8 +112,19 @@ export function LoadingSpinner({ className }: { className?: string }) {
 }
 
 // ── EmptyState ────────────────────────────────────────────────────────────────
+<<<<<<< HEAD
+export function EmptyState({
+  title,
+  description,
+  action,
+}: {
+  title: string;
+  description?: string;
+  action?: ReactNode;
+=======
 export function EmptyState({ title, description, action }: {
   title: string; description?: string; action?: ReactNode;
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 }) {
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4 text-center">
@@ -91,23 +139,51 @@ export function EmptyState({ title, description, action }: {
 }
 
 // ── Pagination ────────────────────────────────────────────────────────────────
+<<<<<<< HEAD
+export function Pagination({
+  page,
+  totalPages,
+  onChange,
+}: {
+  page: number;
+  totalPages: number;
+  onChange: (page: number) => void;
+}) {
+  if (totalPages <= 1) return null;
+
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const visible = pages.filter((p) => p === 1 || p === totalPages || (p >= page - 1 && p <= page + 1));
+=======
 export function Pagination({ page, totalPages, onChange }: {
   page: number; totalPages: number; onChange: (page: number) => void;
 }) {
   if (totalPages <= 1) return null;
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   const visible = pages.filter(p => p === 1 || p === totalPages || (p >= page - 1 && p <= page + 1));
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 
   return (
     <div className="flex items-center justify-center gap-1.5 mt-8">
       <button
+<<<<<<< HEAD
+        onClick={() => onChange(page - 1)}
+        disabled={page === 1}
+=======
         onClick={() => onChange(page - 1)} disabled={page === 1}
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         className="w-8 h-8 rounded-lg flex items-center justify-center border border-slate-700 text-slate-400 hover:border-brand-gold hover:text-brand-gold disabled:opacity-30 transition-all"
       >
         <ChevronLeft className="w-4 h-4" />
       </button>
+<<<<<<< HEAD
+
       {visible.map((p, i) => {
         const prev = visible[i - 1];
+
+=======
+      {visible.map((p, i) => {
+        const prev = visible[i - 1];
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         return (
           <Fragment key={p}>
             {prev && p - prev > 1 && <span className="text-slate-600 px-1">…</span>}
@@ -115,7 +191,13 @@ export function Pagination({ page, totalPages, onChange }: {
               onClick={() => onChange(p)}
               className={cn(
                 'w-8 h-8 rounded-lg text-sm font-medium transition-all',
+<<<<<<< HEAD
+                p === page
+                  ? 'bg-brand-gold text-slate-900'
+                  : 'border border-slate-700 text-slate-400 hover:border-brand-gold hover:text-brand-gold'
+=======
                 p === page ? 'bg-brand-gold text-slate-900' : 'border border-slate-700 text-slate-400 hover:border-brand-gold hover:text-brand-gold'
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
               )}
             >
               {p}
@@ -123,12 +205,23 @@ export function Pagination({ page, totalPages, onChange }: {
           </Fragment>
         );
       })}
+<<<<<<< HEAD
+
+      <button
+        onClick={() => onChange(page + 1)}
+        disabled={page === totalPages}
+=======
       <button
         onClick={() => onChange(page + 1)} disabled={page === totalPages}
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
         className="w-8 h-8 rounded-lg flex items-center justify-center border border-slate-700 text-slate-400 hover:border-brand-gold hover:text-brand-gold disabled:opacity-30 transition-all"
       >
         <ChevronRight className="w-4 h-4" />
       </button>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
