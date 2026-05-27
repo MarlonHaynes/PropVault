@@ -1,5 +1,11 @@
 'use client';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heart, MessageSquare, TrendingUp, Search, Calendar, ArrowRight, MapPin, Bed, Bath, Maximize2, CheckCircle, Clock, Star, AlertCircle, Phone } from 'lucide-react';
@@ -20,6 +26,11 @@ const marketStats = [
 
 const recentClosings = saleHistory.slice(0, 3);
 const upcomingViewing = demoViewings.find(v => v.status === 'upcoming');
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
 import { Heart, Search, MessageSquare, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
@@ -29,11 +40,21 @@ import { listings } from '@/data/listings';
 import { ListingCard } from '@/components/listings/ListingCard';
 import { formatPrice } from '@/utils';
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function DashboardPage() {
   const { user } = useAuth();
   const { savedIds } = useSaved();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const { listings, loading } = useListingsContext();
   const firstName = user?.displayName?.split(' ')[0] || 'there';
   const savedListings = listings.filter(l => savedIds.includes(l.id)).slice(0, 3);
@@ -86,6 +107,11 @@ export default function DashboardPage() {
             </div>
             <p className="text-2xl font-bold text-white">{card.value}</p>
             <p className="text-xs text-slate-400 mt-0.5 group-hover:text-slate-300 transition-colors">{card.label}</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
   const recentSaved = listings.filter(l => savedIds.includes(l.id)).slice(0, 3);
 
@@ -111,11 +137,21 @@ export default function DashboardPage() {
             <div className="text-2xl font-bold text-white mb-0.5">{c.value}</div>
             <div className="text-xs text-slate-400">{c.label}</div>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           </Link>
         ))}
       </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Saved properties */}
         <div className="lg:col-span-2 bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
@@ -193,6 +229,11 @@ export default function DashboardPage() {
               <p className="text-lg font-bold text-white">{s.value}</p>
               <p className="text-xs text-slate-400 mt-0.5">{s.label}</p>
               <p className={cn('text-xs font-medium mt-1.5', s.up ? 'text-emerald-400' : 'text-red-400')}>{s.up ? '↑' : '↓'} {s.delta}</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* Recently saved */}
       {recentSaved.length > 0 && (
@@ -222,11 +263,21 @@ export default function DashboardPage() {
               <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
               <div className={`text-xs mt-1.5 font-medium ${s.up ? 'text-emerald-400' : 'text-red-400'}`}>{s.change}</div>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
           ))}
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
       {/* Recent Closings */}
       <div className="bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
@@ -258,8 +309,16 @@ export default function DashboardPage() {
           })}
         </div>
       </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

@@ -7,6 +7,12 @@ import { Button } from '@/components/ui/Button';
 import { SectionHeader } from '@/components/ui/Display';
 import { useToast } from '@/hooks';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { MapPin, Phone, Mail, Clock, CheckCircle, MessageSquare, Users, Building2 } from 'lucide-react';
 
 const offices = [
@@ -45,14 +51,29 @@ const contactReasons = [
   { icon: Users,        title: 'Connect with an Agent',desc: 'Talk to a specialist in your target city or property type.' },
   { icon: CheckCircle,  title: 'General Inquiry',     desc: 'Press, partnerships, careers, or anything else.' },
 ];
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+=======
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function ContactPage() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: '', email: '', phone: '',
@@ -61,9 +82,18 @@ export default function ContactPage() {
     bestTime: '',
     message: '',
   });
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+=======
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -73,10 +103,22 @@ export default function ContactPage() {
     toast('Message received! Your agent will reach out within 2 hours.', 'success');
     setSubmitted(true);
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    await new Promise(r => setTimeout(r, 1200));
+    toast('Message received! Your agent will reach out within 2 hours.', 'success');
+    setSubmitted(true);
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     await new Promise(r => setTimeout(r, 1000)); // simulate
     toast('Message sent! We\'ll be in touch within 24 hours.', 'success');
     setForm({ name: '', email: '', phone: '', subject: '', message: '' });
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     setLoading(false);
   }
 
@@ -84,6 +126,12 @@ export default function ContactPage() {
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
       {/* Hero */}
       <section className="pt-28 pb-12 bg-gradient-to-b from-slate-900 to-brand-dark">
@@ -204,6 +252,11 @@ export default function ContactPage() {
                   </a>
                 </div>
               ))}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,6 +308,10 @@ export default function ContactPage() {
                 </form>
               </div>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
           </div>
         </div>
@@ -262,7 +319,15 @@ export default function ContactPage() {
 <<<<<<< HEAD
 
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <Footer />
     </div>
   );

@@ -177,8 +177,17 @@ export interface MortgageInput {
 <<<<<<< HEAD
   amortizationYears: number;
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  amortizationYears: number;
+=======
   amortization: number;
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+  amortization: number;
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 }
 
 export interface MortgageResult {

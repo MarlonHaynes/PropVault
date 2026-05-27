@@ -3,10 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Bed, Bath, Maximize2, Heart, MapPin, GitCompare } from 'lucide-react';
 <<<<<<< HEAD
+<<<<<<< HEAD
+import { cn, formatPrice, getListingCoverImage, getListingSlug } from '@/utils';
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { cn, formatPrice, getListingSlug } from '@/utils';
 =======
 import { cn, formatPrice, slugify } from '@/utils';
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { StatusBadge } from '@/components/ui/Display';
 import { useAuth } from '@/context/AuthContext';
 import { useSaved } from '@/context/SavedContext';
@@ -28,9 +38,20 @@ export function ListingCard({ listing, layout = 'grid' }: ListingCardProps) {
   const inCompare = isInCompare(listing.id);
 <<<<<<< HEAD
   const slug = getListingSlug(listing);
+<<<<<<< HEAD
+  const coverImage = getListingCoverImage(listing);
+=======
+<<<<<<< HEAD
+  const slug = getListingSlug(listing);
 =======
   const slug = slugify(listing.title) + '-' + listing.id.slice(-4);
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+=======
+  const slug = slugify(listing.title) + '-' + listing.id.slice(-4);
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
   async function handleSave(e: React.MouseEvent) {
     e.preventDefault();
@@ -49,7 +70,15 @@ export function ListingCard({ listing, layout = 'grid' }: ListingCardProps) {
     return (
       <Link href={`/listings/${slug}`} className="group flex gap-4 bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-brand-gold/50 transition-all duration-300">
         <div className="relative w-48 shrink-0 overflow-hidden">
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <Image src={coverImage} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+=======
           <Image src={listing.images[0]} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+          <Image src={listing.images[0]} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <StatusBadge status={listing.propertyStatus} className="absolute top-2 left-2" />
         </div>
         <div className="flex-1 p-4 flex flex-col justify-between">
@@ -77,7 +106,15 @@ export function ListingCard({ listing, layout = 'grid' }: ListingCardProps) {
     <Link href={`/listings/${slug}`} className="group block bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-brand-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand-gold/5">
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <Image src={coverImage} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+=======
         <Image src={listing.images[0]} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+        <Image src={listing.images[0]} alt={listing.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
         {/* Badges */}

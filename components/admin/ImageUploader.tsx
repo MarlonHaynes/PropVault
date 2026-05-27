@@ -1,5 +1,14 @@
 'use client';
 import { useState, useCallback } from 'react';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import Image from 'next/image';
+import { Upload, X, GripVertical, Star, Link as LinkIcon, Plus } from 'lucide-react';
+
+interface ImageUploaderProps {
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
 import { Upload, X, Loader2, GripVertical, Star } from 'lucide-react';
@@ -8,11 +17,50 @@ import { cn } from '@/utils';
 
 interface ImageUploaderProps {
   listingId: string;
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   images: string[];
   onChange: (images: string[]) => void;
   maxImages?: number;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+export function ImageUploader({ images, onChange, maxImages = 10 }: ImageUploaderProps) {
+  const [urlInput, setUrlInput] = useState('');
+  const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
+  const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
+
+  function addUrl() {
+    const url = urlInput.trim();
+    if (!url || images.includes(url) || images.length >= maxImages) return;
+    if (!url.startsWith('http')) { alert('Please enter a valid URL starting with http'); return; }
+    onChange([...images, url]);
+    setUrlInput('');
+  }
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files || []);
+    const newUrls = files.map(f => URL.createObjectURL(f));
+    onChange([...images, ...newUrls].slice(0, maxImages));
+    e.target.value = '';
+  }
+
+  function removeImage(idx: number) {
+    onChange(images.filter((_, i) => i !== idx));
+  }
+
+  function setAsCover(idx: number) {
+    onChange([images[idx], ...images.filter((_, i) => i !== idx)]);
+  }
+
+  function handleDragStart(idx: number) { setDraggingIdx(idx); }
+  function handleDragOver(e: React.DragEvent, idx: number) { e.preventDefault(); setDragOverIdx(idx); }
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 interface FileWithProgress {
   file: File;
   preview: string;
@@ -91,6 +139,10 @@ export function ImageUploader({ listingId, images, onChange, maxImages = 10 }: I
     e.preventDefault();
     setDragOverIdx(idx);
   }
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   function handleDrop(e: React.DragEvent, idx: number) {
     e.preventDefault();
     if (draggingIdx === null || draggingIdx === idx) return;
@@ -104,6 +156,85 @@ export function ImageUploader({ listingId, images, onChange, maxImages = 10 }: I
 
   return (
     <div className="space-y-4">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      {/* Add by URL */}
+      <div className="flex gap-2">
+        <div className="flex-1 flex items-center gap-2 bg-slate-800 border border-slate-600 rounded-lg px-3 h-10">
+          <LinkIcon className="w-4 h-4 text-slate-400 shrink-0" />
+          <input
+            type="url"
+            value={urlInput}
+            onChange={e => setUrlInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addUrl())}
+            placeholder="Paste image URL (https://...)"
+            className="flex-1 bg-transparent text-sm text-slate-200 placeholder-slate-500 focus:outline-none"
+          />
+        </div>
+        <button type="button" onClick={addUrl}
+          className="h-10 px-4 rounded-lg bg-brand-gold text-slate-900 text-sm font-semibold hover:bg-amber-400 transition-colors flex items-center gap-1.5">
+          <Plus className="w-4 h-4" /> Add
+        </button>
+      </div>
+
+      {/* Upload local file */}
+      <label className="flex items-center justify-center gap-3 h-20 rounded-xl border-2 border-dashed border-slate-600 hover:border-brand-gold/50 cursor-pointer transition-colors group">
+        <Upload className="w-5 h-5 text-slate-500 group-hover:text-brand-gold transition-colors" />
+        <div className="text-center">
+          <p className="text-sm text-slate-400 group-hover:text-slate-300">Click to upload from your device</p>
+          <p className="text-xs text-slate-600">JPG, PNG, WebP — preview only (use URL for persistence)</p>
+        </div>
+        <input type="file" accept="image/*" multiple className="sr-only" onChange={handleFileChange} />
+      </label>
+
+      {/* Image grid */}
+      {images.length > 0 && (
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {images.map((url, idx) => (
+              <div
+                key={idx}
+                draggable
+                onDragStart={() => handleDragStart(idx)}
+                onDragOver={e => handleDragOver(e, idx)}
+                onDrop={e => handleDrop(e, idx)}
+                onDragEnd={() => { setDraggingIdx(null); setDragOverIdx(null); }}
+                className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition-all cursor-grab ${
+                  idx === 0 ? 'border-brand-gold' :
+                  dragOverIdx === idx ? 'border-blue-400 scale-105' : 'border-slate-700'
+                } ${draggingIdx === idx ? 'opacity-40' : ''}`}
+              >
+                <Image src={url} alt={`Image ${idx + 1}`} fill className="object-cover" unoptimized />
+                {idx === 0 && (
+                  <div className="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-brand-gold text-slate-900 text-[9px] font-bold flex items-center gap-0.5">
+                    <Star className="w-2.5 h-2.5 fill-current" /> Cover
+                  </div>
+                )}
+                <div className="absolute top-1 right-1 w-5 h-5 rounded bg-black/50 flex items-center justify-center">
+                  <GripVertical className="w-3 h-3 text-white" />
+                </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5">
+                  {idx !== 0 && (
+                    <button type="button" onClick={() => setAsCover(idx)}
+                      className="px-2 py-1 rounded bg-brand-gold text-slate-900 text-[9px] font-bold">
+                      Cover
+                    </button>
+                  )}
+                  <button type="button" onClick={() => removeImage(idx)}
+                    className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white">
+                    <X className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500">
+            {images.length}/{maxImages} images · Drag to reorder · First image is the cover photo
+          </p>
+        </>
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* Drop zone */}
       <div
         {...getRootProps()}
@@ -207,6 +338,10 @@ export function ImageUploader({ listingId, images, onChange, maxImages = 10 }: I
         <p className="text-xs text-slate-500">
           Drag to reorder. First image is the cover photo shown on listing cards.
         </p>
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       )}
     </div>
   );

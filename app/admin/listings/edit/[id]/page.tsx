@@ -1,7 +1,15 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { getListing } from '@/lib/store';
+=======
 import { getListing } from '@/firebase/firestore';
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+import { getListing } from '@/firebase/firestore';
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { ListingForm } from '@/components/admin/ListingForm';
 import { LoadingSpinner } from '@/components/ui/Display';
 import type { Listing } from '@/types';
@@ -11,6 +19,20 @@ export default function EditListingPage() {
   const id = params.id as string;
   const [listing, setListing] = useState<Listing | null>(null);
   const [loading, setLoading] = useState(true);
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+  useEffect(() => {
+    const found = getListing(id);
+    setListing(found);
+    setLoading(false);
+  }, [id]);
+
+  if (loading) return <div className="flex justify-center py-20"><LoadingSpinner className="w-8 h-8" /></div>;
+  if (!listing) return <div className="text-center py-20 text-slate-400">Listing not found.</div>;
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
@@ -30,14 +52,30 @@ export default function EditListingPage() {
       <p className="text-slate-400">Listing not found.</p>
     </div>
   );
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
   return (
     <div>
       <div className="mb-8">
         <h1 className="font-playfair text-2xl font-bold text-white">Edit Listing</h1>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <p className="text-slate-400 text-sm mt-1 truncate">{listing.title}</p>
+      </div>
+      <ListingForm listing={listing} mode="edit" />
+=======
         <p className="text-slate-400 text-sm mt-1 truncate">{listing?.title}</p>
       </div>
       {listing && <ListingForm listing={listing} mode="edit" />}
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+        <p className="text-slate-400 text-sm mt-1 truncate">{listing?.title}</p>
+      </div>
+      {listing && <ListingForm listing={listing} mode="edit" />}
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

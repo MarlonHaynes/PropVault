@@ -7,7 +7,15 @@ import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Bed, Bath, Maximize2, Car } from 'lucide-react';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { formatPrice, getListingCoverImage } from '@/utils';
+=======
 import { formatPrice } from '@/utils';
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+import { formatPrice } from '@/utils';
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function ComparePage() {
   const { compareList, removeFromCompare, clearCompare } = useCompare();
@@ -51,7 +59,15 @@ export default function ComparePage() {
                     {compareList.map(l => (
                       <th key={l.id} className="p-3">
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-2">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          <Image src={getListingCoverImage(l)} alt={l.title} fill className="object-cover" unoptimized />
+=======
                           <Image src={l.images[0]} alt={l.title} fill className="object-cover" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+                          <Image src={l.images[0]} alt={l.title} fill className="object-cover" />
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                           <button onClick={() => removeFromCompare(l.id)}
                             className="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-red-500 transition-colors">
                             <X className="w-3.5 h-3.5" />

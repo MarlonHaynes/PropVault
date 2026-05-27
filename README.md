@@ -1,4 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+# PropVault — GTA Real Estate Platform
+
+**Production-grade real estate marketplace for the Greater Toronto Area.**
+Zero backend dependencies. Works instantly with `npm run dev`. Deploys to Vercel in one command.
+
+---
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 # PropVault v4 — GTA Real Estate Platform
 
 **Enterprise-grade real estate marketplace serving Southern Ontario.**
@@ -24,15 +35,57 @@ A production-grade real estate marketplace for the Greater Toronto Area. Built w
 - **Map Search** — city-filtered listings panel with map placeholder (plug in Google Maps API)
 - **Demo Mode** — fully functional without any API keys using localStorage mock
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 ## 🚀 Quick Start
 
 ```bash
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 npm install
 npm run dev
 ```
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+Open `http://localhost:3000` — everything works immediately, no setup required.
+
+**Demo login:** Click "Continue as Demo User" on the login page.
+- Full admin access at `/admin`
+- Pre-seeded with 30 listings, 5 inquiries, 4 viewings
+
+---
+
+## ✨ No Firebase. No Environment Variables. No Config.
+
+All data persists in **localStorage**. The app works identically whether you're running locally or deployed to Vercel.
+
+| Feature | How it works |
+|---------|-------------|
+| Listings | Static TypeScript data + localStorage for admin edits |
+| Auth | localStorage-based user accounts |
+| Saved Properties | localStorage per user |
+| Inquiries | localStorage |
+| Admin CRUD | localStorage — changes persist across page refreshes |
+| Images | URL input or local file preview |
+
+---
+
+## 📁 Project Structure
+
+```
+propvault/
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 Open `http://localhost:3000` · Click **"Continue as Demo User"** on the login page.
 Full admin access at `/admin`. All 30 listings, 5 inquiries, 4 viewings are pre-seeded.
 
@@ -111,11 +164,32 @@ Copy `.env.example` to `.env.local` and add keys to enable:
 ```
 propvault/
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 ├── app/
 │   ├── (auth)/          Login, Register, Forgot Password
 │   ├── (main)/          Listings, Agents, Map, About, Contact, Compare, Saved
 │   ├── (dashboard)/     User CRM: Overview, Inquiries, Viewings, Saved, Searches, Profile
 │   └── admin/           Admin: Dashboard, Listings CRUD, Agents, Inquiries
+<<<<<<< HEAD
+<<<<<<< HEAD
+├── components/          UI components, layout, forms, admin, map
+├── context/             Auth, Listings, Saved, Compare — all localStorage based
+├── data/
+│   ├── listings.ts      30 curated GTA properties with matched photos
+│   ├── agents.ts        12 full agent profiles
+│   ├── sales-history.ts Historical sales data for admin charts
+│   └── demo-data.ts     Seeded inquiries + viewings for dashboard demo
+├── lib/
+│   └── store.ts         Single localStorage store — replaces all Firebase calls
+├── hooks/               useListings, useScrolled, useToast, useMortgageCalculator
+├── types/               Full TypeScript interfaces
+└── utils/               formatPrice, slugify, getListingSlug, calculateMortgage, cn
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 ├── components/
 │   ├── admin/           AdminGuard, AdminSidebar, ImageUploader, ListingForm
 │   ├── layout/          Navbar, Footer
@@ -135,10 +209,29 @@ propvault/
 ├── firestore.rules      Security rules for production deployment
 ├── storage.rules        Storage security rules
 └── next.config.js       module.exports format, domains array
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 ```
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+## 🌐 Deploy to Vercel
+
+```bash
+npx vercel
+```
+
+Zero environment variables required. The app is fully static + client-side.
+
+---
+
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 ## 🔐 Firebase Setup (go live in 15 minutes)
 
 ```bash
@@ -174,11 +267,27 @@ firebase deploy --only firestore:rules,storage
 └── utils/                  # cn, formatPrice, slugify, calculateMortgage, etc.
 ```
 
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 ## 🎨 Design System
 
 | Token | Value |
 |-------|-------|
 | Background | `#0f172a` |
+<<<<<<< HEAD
+<<<<<<< HEAD
+| Gold Accent | `#c8a97e` |
+| Heading Font | Playfair Display |
+| Body Font | DM Sans |
+
+---
+
+Built by **WebAlchemistLabs** · PropVault © 2024
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 | Surface | `#1e293b` |
 | Gold Accent | `#c8a97e` |
 | Teal Accent | `#0f766e` |
@@ -219,3 +328,7 @@ Built by **WebAlchemistLabs** · PropVault © 2024 · License #PROP2010-ON
 =======
 Built by [WebAlchemistLabs](https://github.com/WebAlchemistLabs) · PropVault © 2024
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508

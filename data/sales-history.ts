@@ -87,7 +87,15 @@ export const saleHistory: SaleRecord[] = [
     salePrice: 3750000, listPrice: 3975000, soldDate: '2023-12-19',
     daysOnMarket: 41, agentId: 'agent-002', commission: 93750,
     buyerName: 'B. & F. Tremblay', sellerName: 'Kleinburg Dev Inc.',
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop',
+=======
     image: 'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=400&h=300&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: 'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=400&h=300&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   },
   {
     id: 'sale-008',
@@ -97,7 +105,15 @@ export const saleHistory: SaleRecord[] = [
     salePrice: 3100000, listPrice: 3199000, soldDate: '2023-11-28',
     daysOnMarket: 14, agentId: 'agent-003', commission: 77500,
     buyerName: 'G. Papadopoulos', sellerName: 'L. & A. Reeves',
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop',
+=======
     image: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=400&h=300&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=400&h=300&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   },
   {
     id: 'sale-009',

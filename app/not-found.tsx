@@ -3,7 +3,15 @@ import { Navbar } from '@/components/layout/Navbar';
 <<<<<<< HEAD
 import { Search, Home, MapPin, Users } from 'lucide-react';
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { Search, Home, MapPin, Users } from 'lucide-react';
+=======
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function NotFound() {
   return (
@@ -11,6 +19,12 @@ export default function NotFound() {
       <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         {/* Big 404 */}
         <div className="font-playfair text-[140px] font-bold leading-none select-none mb-2" style={{ color: 'rgba(200,169,126,0.12)' }}>
           404
@@ -40,6 +54,11 @@ export default function NotFound() {
           Looking for a specific property? Try our <Link href="/map-search" className="text-brand-gold hover:text-amber-400">map search</Link> or contact us at{' '}
           <a href="tel:+14165550100" className="text-brand-gold hover:text-amber-400">+1 (416) 555-0100</a>
         </p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
         <div className="font-playfair text-[120px] font-bold text-brand-gold/20 leading-none select-none">404</div>
         <h1 className="font-playfair text-3xl font-bold text-white -mt-4 mb-3">Page Not Found</h1>
@@ -53,6 +72,10 @@ export default function NotFound() {
           </Link>
         </div>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       </div>
     </div>
   );

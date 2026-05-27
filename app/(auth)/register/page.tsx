@@ -21,7 +21,14 @@ export default function RegisterPage() {
     e.preventDefault();
     setError('');
     if (form.password !== form.confirm) { setError('Passwords do not match.'); return; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     setLoading(true);
     const res = await register(form.email, form.password, form.name);
     if (res.error) { setError(res.error); setLoading(false); }
@@ -34,16 +41,36 @@ export default function RegisterPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-brand-gold flex items-center justify-center">
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <span className="text-slate-900 font-bold font-mono text-sm">PV</span>
+=======
               <span className="text-slate-900 font-bold font-mono">PV</span>
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+              <span className="text-slate-900 font-bold font-mono">PV</span>
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
             <span className="font-playfair text-2xl font-bold text-white">PropVault</span>
           </Link>
         </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8">
+          <h1 className="font-playfair text-2xl font-bold text-white mb-1">Create Your Account</h1>
+          <p className="text-slate-400 text-sm mb-6">Join thousands of GTA property hunters</p>
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
         <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8">
           <h1 className="font-playfair text-2xl font-bold text-white mb-1">Create Your Account</h1>
           <p className="text-slate-400 text-sm mb-6">Join thousands of GTA property hunters</p>
 
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input label="Full Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} required placeholder="Jane Smith" />
             <Input label="Email" type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required placeholder="you@example.com" />
@@ -57,6 +84,11 @@ export default function RegisterPage() {
             {error && <p className="text-sm text-red-400 bg-red-500/10 rounded-lg px-3 py-2">{error}</p>}
             <Button type="submit" variant="gold" fullWidth loading={loading}>Create Account</Button>
           </form>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
           <p className="text-center text-xs text-slate-500 mt-4">
             By registering you agree to our{' '}
@@ -64,6 +96,10 @@ export default function RegisterPage() {
             <a href="#" className="text-brand-gold hover:underline">Privacy Policy</a>
           </p>
 
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <p className="text-center text-sm text-slate-400 mt-5">
             Already have an account?{' '}
             <Link href="/login" className="text-brand-gold hover:text-amber-400 transition-colors">Sign in</Link>

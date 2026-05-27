@@ -1,4 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -123,6 +129,11 @@ export default function AdminAgentsPage() {
           </div>
         ))}
       </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -167,6 +178,10 @@ export default function AdminAgentsPage() {
         </div>
       </main>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

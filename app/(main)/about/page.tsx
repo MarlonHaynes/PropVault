@@ -7,6 +7,12 @@ import { SectionHeader } from '@/components/ui/Display';
 import { AgentCard } from '@/components/agents/AgentCard';
 import { agents } from '@/data/agents';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { Award, Shield, TrendingUp, Users, Home, Star, CheckCircle, MapPin, Globe } from 'lucide-react';
 
 export const metadata: Metadata = { title: 'About PropVault — GTA\'s Premier Real Estate Platform' };
@@ -54,12 +60,21 @@ const stats = [
   { value: '48',      label: 'Expert Agents' },
   { value: '15+',     label: 'GTA Cities' },
 ];
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
 import { stats } from '@/data';
 import { Target, Heart, Zap } from 'lucide-react';
 
 export const metadata: Metadata = { title: 'About Us' };
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function AboutPage() {
   const featured = agents.filter(a => a.featured).slice(0, 4);
@@ -69,6 +84,12 @@ export default function AboutPage() {
       <Navbar />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── HERO ────────────────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
@@ -86,6 +107,11 @@ export default function AboutPage() {
             For 14 years, PropVault has guided over 12,400 families through one of life's biggest decisions — buying,
             selling, or renting in the Greater Toronto Area. We combine deep local expertise with cutting-edge technology
             to deliver results that exceed expectations, every time.
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -102,11 +128,21 @@ export default function AboutPage() {
             PropVault was built with one belief: finding your home should be inspiring, not overwhelming.
             We combine local expertise, cutting-edge tools, and human connection to make that possible.
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           </p>
         </div>
       </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── STATS BAR ───────────────────────────────────────────────────── */}
       <section className="border-y border-slate-800 bg-slate-900/60">
         <div className="max-w-7xl mx-auto px-4">
@@ -115,6 +151,11 @@ export default function AboutPage() {
               <div key={i} className="py-8 text-center px-4">
                 <div className="font-playfair text-3xl font-bold text-brand-gold">{s.value}</div>
                 <div className="text-xs text-slate-400 mt-1">{s.label}</div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* Stats */}
       <section className="py-12 bg-slate-900/50 border-y border-slate-800">
@@ -125,6 +166,10 @@ export default function AboutPage() {
                 <div className="font-playfair text-4xl font-bold text-brand-gold">{s.value}</div>
                 <div className="text-sm text-slate-400 mt-1">{s.label}</div>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               </div>
             ))}
           </div>
@@ -132,6 +177,12 @@ export default function AboutPage() {
       </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── OUR STORY ────────────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -209,6 +260,11 @@ export default function AboutPage() {
               </div>
               <h3 className="font-playfair text-lg font-bold text-white mb-2">{v.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed">{v.desc}</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* Values */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,12 +282,22 @@ export default function AboutPage() {
               <h3 className="font-playfair text-xl font-bold text-white mb-3">{v.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{v.desc}</p>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
           ))}
         </div>
       </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── AWARDS ───────────────────────────────────────────────────────── */}
       <section className="py-20 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,6 +346,11 @@ export default function AboutPage() {
           <div className="text-center mt-8">
             <Link href="/agents" className="inline-flex items-center gap-2 h-10 px-8 rounded-xl border border-slate-600 text-slate-200 font-medium hover:border-brand-gold hover:text-brand-gold transition-all text-sm">
               Meet All 48 Agents →
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* Team */}
       <section className="py-20 bg-slate-900/50">
@@ -292,16 +363,31 @@ export default function AboutPage() {
             <Link href="/agents" className="inline-flex items-center gap-2 text-sm text-brand-gold hover:gap-3 transition-all">
               View All Agents →
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </Link>
           </div>
         </div>
       </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="py-20 max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-playfair text-4xl font-bold text-white mb-4">Ready to Work With Us?</h2>
         <p className="text-slate-400 mb-8 text-lg">Join the 12,400+ GTA families who found their perfect home with PropVault.</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
       {/* CTA */}
       <section className="py-20 max-w-4xl mx-auto px-4 text-center">
@@ -310,6 +396,10 @@ export default function AboutPage() {
         </h2>
         <p className="text-slate-400 mb-8">Whether you&apos;re a first-time buyer or seasoned investor, we have the right agent and the right property for you.</p>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/listings" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl bg-brand-gold text-slate-900 font-semibold hover:bg-amber-400 transition-colors">
             Browse Listings

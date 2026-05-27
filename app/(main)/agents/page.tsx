@@ -3,13 +3,28 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+import Link from 'next/link';
+import Image from 'next/image';
+=======
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { AgentCard } from '@/components/agents/AgentCard';
 import { SectionHeader } from '@/components/ui/Display';
 import { agents } from '@/data/agents';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { agentPerformance } from '@/data/sales-history';
 import { Star, Award, TrendingUp, Phone } from 'lucide-react';
 import { formatPrice } from '@/utils';
@@ -126,6 +141,11 @@ export default function AgentsPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
 
 export const metadata: Metadata = { title: 'Our Agents' };
@@ -158,6 +178,10 @@ export default function AgentsPage() {
         </div>
       </main>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <Footer />
     </div>
   );

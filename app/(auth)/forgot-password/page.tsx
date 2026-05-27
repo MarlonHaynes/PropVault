@@ -1,6 +1,26 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { CheckCircle } from 'lucide-react';
+import { Input } from '@/components/ui/FormElements';
+import { Button } from '@/components/ui/Button';
+
+export default function ForgotPasswordPage() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    await new Promise(r => setTimeout(r, 1000));
+    setSent(true);
+    setLoading(false);
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useAuth } from '@/context/AuthContext';
 import { Input } from '@/components/ui/FormElements';
 import { Button } from '@/components/ui/Button';
@@ -20,6 +40,10 @@ export default function ForgotPasswordPage() {
     const res = await sendReset(email);
     if (res.error) { setError(res.error); setLoading(false); }
     else setSent(true);
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   }
 
   return (
@@ -28,7 +52,15 @@ export default function ForgotPasswordPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-brand-gold flex items-center justify-center">
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <span className="text-slate-900 font-bold font-mono text-sm">PV</span>
+=======
               <span className="text-slate-900 font-bold font-mono">PV</span>
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+              <span className="text-slate-900 font-bold font-mono">PV</span>
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
             <span className="font-playfair text-2xl font-bold text-white">PropVault</span>
           </Link>
@@ -44,10 +76,22 @@ export default function ForgotPasswordPage() {
           ) : (
             <>
               <h1 className="font-playfair text-2xl font-bold text-white mb-1">Reset Password</h1>
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <p className="text-slate-400 text-sm mb-6">Enter your email and we'll send a reset link.</p>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="you@example.com" />
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               <p className="text-slate-400 text-sm mb-6">Enter your email and we'll send you a reset link.</p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="you@example.com" />
                 {error && <p className="text-sm text-red-400 bg-red-500/10 rounded-lg px-3 py-2">{error}</p>}
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 <Button type="submit" variant="gold" fullWidth loading={loading}>Send Reset Link</Button>
               </form>
               <p className="text-center text-sm text-slate-400 mt-5">

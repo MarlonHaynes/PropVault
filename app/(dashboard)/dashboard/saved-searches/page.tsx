@@ -1,5 +1,11 @@
 'use client';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useState } from 'react';
 import Link from 'next/link';
 import { Search, Trash2, Bell, BellOff, ArrowRight, SlidersHorizontal } from 'lucide-react';
@@ -106,6 +112,11 @@ export default function SavedSearchesPage() {
                   className="flex items-center gap-1 text-xs text-brand-gold hover:text-amber-400 transition-colors">
                   View Results <ArrowRight className="w-3 h-3" />
                 </Link>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
 import Link from 'next/link';
 import { Search, Trash2 } from 'lucide-react';
@@ -147,12 +158,22 @@ export default function SavedSearchesPage() {
                   <Trash2 className="w-4 h-4" />
                 </button>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               </div>
             </div>
           ))}
         </div>
       )}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
       {/* Add search CTA */}
       <div className="mt-8 p-5 bg-slate-800/30 border border-dashed border-slate-700 rounded-2xl text-center">
@@ -163,8 +184,16 @@ export default function SavedSearchesPage() {
           <Button variant="outline" size="sm">Browse & Filter Listings</Button>
         </Link>
       </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+=======
+>>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

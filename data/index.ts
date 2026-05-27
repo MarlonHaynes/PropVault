@@ -2,6 +2,13 @@ export { listings } from "./listings";
 export { agents } from "./agents";
 
 import { Testimonial, FAQItem, City, Neighborhood, BlogPost } from "@/types";
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { getCityImage } from "./city-images";
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export const testimonials: Testimonial[] = [
   {
@@ -185,7 +192,15 @@ export const cities: City[] = [
     name: "Toronto",
     slug: "toronto",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Toronto"),
+=======
     image: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 42,
     description: "Canada's largest city offering everything from luxury condos to heritage homes across dozens of unique neighbourhoods.",
   },
@@ -194,7 +209,15 @@ export const cities: City[] = [
     name: "Mississauga",
     slug: "mississauga",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Mississauga"),
+=======
     image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 18,
     description: "Canada's 6th largest city with lakefront charm, suburban family appeal, and a rapidly growing downtown core.",
   },
@@ -203,7 +226,15 @@ export const cities: City[] = [
     name: "Oakville",
     slug: "oakville",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Oakville"),
+=======
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 14,
     description: "Ontario's most affluent community combining heritage harbour charm with new family communities and excellent schools.",
   },
@@ -212,7 +243,15 @@ export const cities: City[] = [
     name: "Vaughan",
     slug: "vaughan",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Vaughan"),
+=======
     image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 16,
     description: "From Kleinburg estates to VMC's urban pulse, Vaughan offers exceptional value and variety across its diverse communities.",
   },
@@ -221,7 +260,15 @@ export const cities: City[] = [
     name: "Markham",
     slug: "markham",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Markham"),
+=======
     image: "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 12,
     description: "Canada's hi-tech capital with charming heritage villages, top-ranked schools, and a vibrant multicultural community.",
   },
@@ -230,7 +277,15 @@ export const cities: City[] = [
     name: "Richmond Hill",
     slug: "richmond-hill",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Richmond Hill"),
+=======
     image: "https://images.unsplash.com/photo-1597047084897-51e81819a499?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1597047084897-51e81819a499?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 10,
     description: "Premium York Region address with luxury lakeside estates, excellent schools, and outstanding parks and trails.",
   },
@@ -239,7 +294,15 @@ export const cities: City[] = [
     name: "Brampton",
     slug: "brampton",
     province: "Ontario",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: getCityImage("Brampton"),
+=======
     image: "https://images.unsplash.com/photo-1582063289852-62e3ba2747f8?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1582063289852-62e3ba2747f8?w=800&h=600&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     listingCount: 8,
     description: "The Flower City offers affordable family homes, strong transit connections, and one of the GTA's most vibrant communities.",
   },
@@ -290,7 +353,15 @@ export const neighborhoods: Neighborhood[] = [
     id: "nbhd-005",
     name: "Port Credit",
     city: "Mississauga",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+=======
     image: "https://images.unsplash.com/photo-1505916349660-8d91a99f6c2c?w=600&h=400&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    image: "https://images.unsplash.com/photo-1505916349660-8d91a99f6c2c?w=600&h=400&fit=crop",
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     avgPrice: 1650000,
     listingCount: 5,
     description: "Mississauga's lakeside gem — a charming village of boutiques, patios, and Lake Ontario waterfront living at its finest.",

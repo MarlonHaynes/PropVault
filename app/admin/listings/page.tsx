@@ -1,5 +1,20 @@
 <<<<<<< HEAD
 'use client';
+<<<<<<< HEAD
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Plus, Pencil, Trash2, Eye, Search } from 'lucide-react';
+import { getListings, deleteListing, saveListing } from '@/lib/store';
+import { formatPrice, getListingSlug, cn } from '@/utils';
+import { Button } from '@/components/ui/Button';
+import { Input, Select } from '@/components/ui/FormElements';
+import { EmptyState } from '@/components/ui/Display';
+=======
+<<<<<<< HEAD
+'use client';
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +25,10 @@ import { formatPrice, getListingSlug } from '@/utils';
 import { Button } from '@/components/ui/Button';
 import { Input, Select } from '@/components/ui/FormElements';
 import { LoadingSpinner, EmptyState } from '@/components/ui/Display';
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useToast } from '@/hooks';
 import { Modal } from '@/components/ui/Modal';
 import type { Listing, PropertyStatus } from '@/types';
@@ -17,6 +36,47 @@ import type { Listing, PropertyStatus } from '@/types';
 export default function AdminListingsPage() {
   const { toast } = useToast();
   const [listings, setListings] = useState<Listing[]>([]);
+<<<<<<< HEAD
+<<<<<<< HEAD
+  const [search, setSearch] = useState('');
+  const [statusFilter, setStatusFilter] = useState('');
+  const [deleteTarget, setDeleteTarget] = useState<Listing | null>(null);
+
+  function load() { setListings(getListings()); }
+  useEffect(() => { load(); }, []);
+
+  const filtered = listings.filter(l => {
+    const kw = search.toLowerCase();
+    return (!kw || l.title.toLowerCase().includes(kw) || l.city.toLowerCase().includes(kw)) &&
+           (!statusFilter || l.propertyStatus === statusFilter);
+  });
+
+  function handleDelete() {
+    if (!deleteTarget) return;
+    deleteListing(deleteTarget.id);
+    toast('Listing deleted', 'success');
+    setDeleteTarget(null);
+    load();
+  }
+
+  function quickStatus(id: string, status: PropertyStatus) {
+    const all = getListings();
+    const listing = all.find(l => l.id === id);
+    if (listing) { saveListing({ ...listing, propertyStatus: status }); load(); }
+    toast(`Status → ${status}`, 'success');
+  }
+
+  function toggleFeatured(id: string, featured: boolean) {
+    const all = getListings();
+    const listing = all.find(l => l.id === id);
+    if (listing) { saveListing({ ...listing, featured }); load(); }
+  }
+
+  return (
+    <div>
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -68,11 +128,43 @@ export default function AdminListingsPage() {
   return (
     <div>
       {/* Header */}
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="font-playfair text-2xl font-bold text-white">Listings</h1>
           <p className="text-slate-400 text-sm mt-0.5">{listings.length} total · {filtered.length} shown</p>
         </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <Link href="/admin/listings/new"><Button variant="gold" size="sm"><Plus className="w-4 h-4" /> New Listing</Button></Link>
+      </div>
+
+      <div className="flex flex-wrap gap-3 mb-5">
+        <Input placeholder="Search title, city…" value={search} onChange={e => setSearch(e.target.value)}
+          icon={<Search className="w-4 h-4" />} className="w-64" />
+        <Select options={[{value:'available',label:'Available'},{value:'pending',label:'Pending'},{value:'sold',label:'Sold'},{value:'rented',label:'Rented'}]}
+          placeholder="All Statuses" value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className="w-40" />
+        {(search || statusFilter) && <button onClick={() => { setSearch(''); setStatusFilter(''); }} className="text-xs text-slate-400 hover:text-red-400 transition-colors">Clear</button>}
+      </div>
+
+      {filtered.length === 0 ? (
+        <EmptyState title="No listings found" description="Try adjusting your search or create a new listing." />
+      ) : (
+        <div className="bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[800px]">
+              <thead className="bg-slate-900/40">
+                <tr>{['Photo','Title','City','Price','Type','Status','Featured','Actions'].map(h => (
+                  <th key={h} className="text-left px-4 py-3 text-xs font-medium text-slate-400 uppercase">{h}</th>
+                ))}</tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800">
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <Link href="/admin/listings/new">
           <Button variant="gold" size="sm"><Plus className="w-4 h-4" /> New Listing</Button>
         </Link>
@@ -165,10 +257,26 @@ export default function AdminListingsPage() {
               </thead>
               <tbody className="divide-y divide-slate-800">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 {filtered.map(l => {
                   const slug = getListingSlug(l);
                   return (
                     <tr key={l.id} className="hover:bg-slate-700/20 transition-colors group">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      <td className="px-4 py-3">
+                        <div className="relative w-14 h-10 rounded-lg overflow-hidden bg-slate-700">
+                          {l.images?.[0] ? <Image src={l.images[0]} alt={l.title} fill className="object-cover" unoptimized /> : null}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3">
+                        <p className="text-sm font-medium text-white truncate max-w-[180px]">{l.title}</p>
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                       {/* Thumb */}
                       <td className="px-4 py-3">
                         <div className="relative w-14 h-10 rounded-lg overflow-hidden bg-slate-700">
@@ -182,11 +290,41 @@ export default function AdminListingsPage() {
                       {/* Title */}
                       <td className="px-4 py-3 text-sm text-white max-w-[200px]">
                         <p className="truncate font-medium">{l.title}</p>
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                         <p className="text-xs text-slate-500 truncate">{l.neighborhood}</p>
                       </td>
                       <td className="px-4 py-3 text-sm text-slate-400">{l.city}</td>
                       <td className="px-4 py-3 text-sm text-brand-gold font-medium whitespace-nowrap">{formatPrice(l.price, true)}</td>
                       <td className="px-4 py-3 text-xs text-slate-400 capitalize">{l.propertyType}</td>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      <td className="px-4 py-3">
+                        <select value={l.propertyStatus} onChange={e => quickStatus(l.id, e.target.value as PropertyStatus)}
+                          className={cn('text-xs font-medium px-2 py-1 rounded-full cursor-pointer focus:outline-none',
+                            l.propertyStatus === 'available' ? 'bg-emerald-500/20 text-emerald-400' :
+                            l.propertyStatus === 'pending'   ? 'bg-amber-500/20 text-amber-400' :
+                            l.propertyStatus === 'sold'      ? 'bg-red-500/20 text-red-400' :
+                                                               'bg-blue-500/20 text-blue-400')}>
+                          {['available','pending','sold','rented'].map(s => <option key={s} value={s} className="bg-slate-900 text-slate-200">{s}</option>)}
+                        </select>
+                      </td>
+                      <td className="px-4 py-3">
+                        <button onClick={() => { toggleFeatured(l.id, !l.featured); }}
+                          className={cn('w-8 h-4 rounded-full transition-all relative', l.featured ? 'bg-brand-gold' : 'bg-slate-600')}>
+                          <div className={cn('w-3 h-3 rounded-full bg-white absolute top-0.5 transition-all', l.featured ? 'left-4' : 'left-0.5')} />
+                        </button>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                          <Link href={`/listings/${slug}`} target="_blank" className="p-1.5 text-slate-400 hover:text-white"><Eye className="w-3.5 h-3.5" /></Link>
+                          <Link href={`/admin/listings/edit/${l.id}`} className="p-1.5 text-slate-400 hover:text-brand-gold"><Pencil className="w-3.5 h-3.5" /></Link>
+                          <button onClick={() => setDeleteTarget(l)} className="p-1.5 text-slate-400 hover:text-red-400"><Trash2 className="w-3.5 h-3.5" /></button>
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                       {/* Status — inline change */}
                       <td className="px-4 py-3">
                         <select
@@ -232,11 +370,20 @@ export default function AdminListingsPage() {
                             className="p-1.5 text-slate-400 hover:text-red-400 transition-colors" title="Delete">
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                         </div>
                       </td>
                     </tr>
                   );
                 })}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 =======
                 {listings.map(l => (
                   <tr key={l.id} className="hover:bg-slate-700/20 transition-colors">
@@ -261,6 +408,10 @@ export default function AdminListingsPage() {
                   </tr>
                 ))}
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               </tbody>
             </table>
           </div>
@@ -268,6 +419,22 @@ export default function AdminListingsPage() {
 <<<<<<< HEAD
       )}
 
+<<<<<<< HEAD
+      <Modal open={!!deleteTarget} onClose={() => setDeleteTarget(null)} title="Delete Listing" size="sm">
+        <div className="space-y-4">
+          <p className="text-sm text-slate-400">Permanently delete <span className="text-white font-medium">{deleteTarget?.title}</span>? This cannot be undone.</p>
+          <div className="flex gap-3">
+            <Button variant="danger" fullWidth onClick={handleDelete}>Yes, Delete</Button>
+            <Button variant="ghost" fullWidth onClick={() => setDeleteTarget(null)}>Cancel</Button>
+          </div>
+        </div>
+      </Modal>
+=======
+<<<<<<< HEAD
+      )}
+
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* Delete confirmation modal */}
       <Modal open={!!deleteTarget} onClose={() => setDeleteTarget(null)} title="Delete Listing" size="sm">
         <div className="space-y-4">
@@ -289,6 +456,10 @@ export default function AdminListingsPage() {
 =======
       </main>
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

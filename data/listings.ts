@@ -1,5 +1,13 @@
 <<<<<<< HEAD
 import type { Listing } from '@/types';
+<<<<<<< HEAD
+import { LISTING_IMAGES } from './listing-images';
+=======
+<<<<<<< HEAD
+import type { Listing } from '@/types';
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export const seedListings: Listing[] = [
   // ── TORONTO — KING WEST ──────────────────────────────────────────────────
@@ -137,13 +145,29 @@ export const seedListings: Listing[] = [
     yearBuilt: 2012, parkingSpaces: 2, hoaFees: 2200,
     propertyStatus: 'available', featured: true, newListing: false, openHouse: false,
     images: [
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1615529328331-f8917597711f?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&h=800&fit=crop',
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+    thumbnail: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=400&fit=crop',
+=======
     thumbnail: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    thumbnail: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     description: 'Impeccable luxury suite at the Four Seasons Private Residences. White glove service, unrivalled amenities, and Yorkville\'s finest address.',
     longDescription: 'Residents of the Four Seasons Private Residences enjoy access to the world-renowned hotel\'s complete suite of services, from in-residence dining to valet parking and a world-class spa. This 2,050 sq ft south-facing suite features wide-plank white oak floors, Bulthaup kitchen cabinetry, Miele and Sub-Zero appliances, and floor-to-ceiling windows framing the downtown skyline. The primary suite features custom walk-in closets and a spa bath with heated floors and steam shower. Yorkville boutiques, the Gardiner Museum, and ROM are steps away.',
     features: ['White Oak Floors', 'Bulthaup Kitchen', 'Miele Appliances', 'Steam Shower', 'Private Terrace', 'Floor-to-Ceiling Windows', 'Smart Home System', 'Custom Millwork'],
@@ -336,7 +360,15 @@ export const seedListings: Listing[] = [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=1200&h=800&fit=crop',
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     ],
     thumbnail: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
     description: 'Sun-drenched 36th-floor corner suite at the iconic One Bloor building. Two beds, two baths, sweeping Midtown views, and world-class amenities.',
@@ -412,7 +444,15 @@ export const seedListings: Listing[] = [
     images: [
       'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1615529328331-f8917597711f?w=1200&h=800&fit=crop',
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1560185008-b033106af5c3?w=1200&h=800&fit=crop',
     ],
@@ -527,13 +567,29 @@ export const seedListings: Listing[] = [
     yearBuilt: 2009, parkingSpaces: 4, hoaFees: 0,
     propertyStatus: 'available', featured: true, newListing: false, openHouse: false,
     images: [
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=1200&h=800&fit=crop',
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+    thumbnail: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop',
+=======
     thumbnail: 'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    thumbnail: 'https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     description: 'Magnificent stone manor on an 18,000 sq ft lot in historic Kleinburg Village. Six-car garage, indoor pool, and 5,800 sq ft of exquisite living.',
     longDescription: 'Inspired by European country manors, this masterwork residence commands a premium lot on Islington Avenue in storied Kleinburg Village. The 5,800 sq ft interior features a grand foyer with dual staircase, coffered ceilings, and a professionally designed open-concept kitchen with a 13-foot island and La Cornue range. The primary retreat spans the full depth of the home with a sitting room, fireplace, and a hotel-calibre ensuite with heated floors. Four additional bedrooms, a fully finished walkout basement, and a 2,000 sq ft indoor sports complex with pool and recreational court round out this extraordinary offering. Steps to the McMichael Canadian Art Collection, artisan shops, and gourmet dining.',
     features: ['Dual Staircase', '13-Foot Island', 'La Cornue Range', 'Indoor Pool', 'Sports Court', 'Walkout Basement', 'Six-Car Garage', 'Radiant Floor Heating'],
@@ -566,13 +622,29 @@ export const seedListings: Listing[] = [
     yearBuilt: 2022, parkingSpaces: 0, hoaFees: 0,
     propertyStatus: 'available', featured: false, newListing: true, openHouse: false,
     images: [
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       'https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&h=800&fit=crop',
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+    thumbnail: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=600&h=400&fit=crop',
+=======
     thumbnail: 'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+    thumbnail: 'https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=600&h=400&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     description: 'Brand-new smart studio at Vaughan\'s newest transit hub. Steps from VMC subway, IKEA, and Costco. Perfect for commuters.',
     longDescription: 'Ideally situated at the Vaughan Metropolitan Centre — the terminus of the Toronto-York Spadina Subway Extension — this 510 sq ft studio offers a seamless commute to downtown Toronto in under 45 minutes. The thoughtfully designed unit features floor-to-ceiling windows, a Murphy bed system with integrated desk, and a sleek kitchen with quartz countertops and integrated appliances. Smart home features include keyless entry, a Nest thermostat, and app-controlled lighting. Building amenities include a coworking lounge, rooftop pool, fitness centre, and pet wash station. IKEA, Costco, and the Vaughan Mills Mall are within walking distance.',
     features: ['Murphy Bed System', 'Smart Thermostat', 'Keyless Entry', 'Quartz Countertops', 'Floor-to-Ceiling Windows', 'Integrated Appliances', 'App-Controlled Lighting'],
@@ -803,7 +875,15 @@ export const seedListings: Listing[] = [
     images: [
       'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop',
+<<<<<<< HEAD
+<<<<<<< HEAD
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop',
+=======
       'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+      'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&h=800&fit=crop',
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&h=800&fit=crop',
     ],
@@ -1175,6 +1255,21 @@ export const seedListings: Listing[] = [
   },
 ];
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+for (const listing of seedListings) {
+  const imageSet = LISTING_IMAGES[listing.id];
+  if (imageSet) {
+    listing.images = imageSet.images;
+    listing.thumbnail = imageSet.thumbnail;
+  }
+}
+
+// Export for backward compatibility
+export const listings = seedListings;
+=======
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 // Export for backward compatibility
 export const listings = seedListings;
 =======
@@ -3668,3 +3763,7 @@ export const listings: Listing[] = [
   }) as Listing[]),
 ];
 >>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
+<<<<<<< HEAD
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+=======
+>>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
