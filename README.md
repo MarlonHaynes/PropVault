@@ -10,34 +10,18 @@
 
 </div>
 
-Production-ready real estate web app focused on the Greater Toronto Area, with public browsing, map search, user dashboard, and admin operations.
+Production-ready GTA real estate platform built to showcase full-stack product thinking for production web applications.
 
-## Live Demo + Login (Top Priority)
+## Live Demo
 
 - **Live Demo:** [https://prop-vault-sage.vercel.app/](https://prop-vault-sage.vercel.app/)
 - **Login URL:** `/login`
-- **Demo Credentials:**
+- **Demo Login (for reviewers):**
   - Email: `demo@propvault.ca`
   - Password: `demo123`
 - **Quick Access:**
   - Client Dashboard: `/dashboard`
   - Admin Dashboard: `/admin`
-
-## Key Features
-
-- Public property marketplace with advanced filtering and city coverage
-- Listing detail pages with gallery, inquiry form, and mortgage calculator
-- Map search experience
-- Client dashboard for saved properties and inquiries
-- Admin dashboard for listings, agents, and inquiry workflow
-
-## Tech Stack
-
-- Next.js 14 (App Router)
-- React 18
-- TypeScript
-- Tailwind CSS
-- Local demo-friendly data flow (works out of the box)
 
 ## Screenshots
 
@@ -58,6 +42,30 @@ Production-ready real estate web app focused on the Greater Toronto Area, with p
 
 ### Mortgage Calculator
 ![Mortgage calculator](doc/screenshot/Mortgage%20calculator.png)
+
+## Recruiter Highlights
+
+- End-to-end product flow: public marketplace, authenticated user dashboard, and admin management
+- Advanced listing filtering, compare-ready listing UX, and map-search experience
+- Strong componentized architecture with reusable UI and typed domain models
+- Demo-ready reviewer access with seeded data and no onboarding friction
+
+## Key Features
+
+- Public property marketplace with advanced filtering and city coverage
+- Listing detail pages with gallery, inquiry form, and mortgage calculator
+- Map search experience
+- Client dashboard for saved properties and inquiries
+- Admin dashboard for listings, agents, and inquiry workflow
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Firebase
+- Local demo-friendly data flow (works out of the box)
 
 ## Local Setup
 
