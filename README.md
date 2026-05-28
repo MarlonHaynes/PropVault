@@ -1,22 +1,22 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 # PropVault — GTA Real Estate Platform
 
 **Production-grade real estate marketplace for the Greater Toronto Area.**
 Zero backend dependencies. Works instantly with `npm run dev`. Deploys to Vercel in one command.
 
 ---
-=======
-<<<<<<< HEAD
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+
+ 
 # PropVault v4 — GTA Real Estate Platform
 
 **Enterprise-grade real estate marketplace serving Southern Ontario.**
 Built to impress real clients, hireable as a portfolio centrepiece.
 
 ---
-=======
+
 # PropVault — GTA Real Estate Platform
 
 A production-grade real estate marketplace for the Greater Toronto Area. Built with Next.js 14 App Router, TypeScript, Tailwind CSS, Firebase, and Stripe.
@@ -34,28 +34,27 @@ A production-grade real estate marketplace for the Greater Toronto Area. Built w
 - **Admin Panel** — listings and agent management view
 - **Map Search** — city-filtered listings panel with map placeholder (plug in Google Maps API)
 - **Demo Mode** — fully functional without any API keys using localStorage mock
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+ 
+
+ 
 
 ## 🚀 Quick Start
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+
+
+ 
+
+ 
 npm install
 npm run dev
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 Open `http://localhost:3000` — everything works immediately, no setup required.
 
 **Demo login:** Click "Continue as Demo User" on the login page.
@@ -83,9 +82,9 @@ All data persists in **localStorage**. The app works identically whether you're 
 
 ```
 propvault/
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+ 
 Open `http://localhost:3000` · Click **"Continue as Demo User"** on the login page.
 Full admin access at `/admin`. All 30 listings, 5 inquiries, 4 viewings are pre-seeded.
 
@@ -138,7 +137,7 @@ Full admin access at `/admin`. All 30 listings, 5 inquiries, 4 viewings are pre-
 | Icons | Lucide React |
 
 ---
-=======
+
 git clone <your-repo>
 cd propvault
 npm install
@@ -157,24 +156,23 @@ Copy `.env.example` to `.env.local` and add keys to enable:
 | Auth + Database | Firebase keys |
 | Payments | Stripe keys |
 | Interactive Map | Google Maps API key |
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 
 ## 🗂 Project Structure
 
 ```
 propvault/
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+ 
+
+ 
 ├── app/
 │   ├── (auth)/          Login, Register, Forgot Password
 │   ├── (main)/          Listings, Agents, Map, About, Contact, Compare, Saved
 │   ├── (dashboard)/     User CRM: Overview, Inquiries, Viewings, Saved, Searches, Profile
 │   └── admin/           Admin: Dashboard, Listings CRUD, Agents, Inquiries
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 ├── components/          UI components, layout, forms, admin, map
 ├── context/             Auth, Listings, Saved, Compare — all localStorage based
 ├── data/
@@ -187,9 +185,9 @@ propvault/
 ├── hooks/               useListings, useScrolled, useToast, useMortgageCalculator
 ├── types/               Full TypeScript interfaces
 └── utils/               formatPrice, slugify, getListingSlug, calculateMortgage, cn
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+ 
 ├── components/
 │   ├── admin/           AdminGuard, AdminSidebar, ImageUploader, ListingForm
 │   ├── layout/          Navbar, Footer
@@ -209,16 +207,16 @@ propvault/
 ├── firestore.rules      Security rules for production deployment
 ├── storage.rules        Storage security rules
 └── next.config.js       module.exports format, domains array
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+ 
+
+ 
 ```
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 ## 🌐 Deploy to Vercel
 
 ```bash
@@ -229,9 +227,9 @@ Zero environment variables required. The app is fully static + client-side.
 
 ---
 
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+ 
 ## 🔐 Firebase Setup (go live in 15 minutes)
 
 ```bash
@@ -245,7 +243,7 @@ firebase deploy --only firestore:rules,storage
 
 # 7. Log in → visit /admin → copy your UID → add to NEXT_PUBLIC_ADMIN_UIDS
 # 8. Click "Seed DB" in admin dashboard
-=======
+
 ├── app/                    # Next.js App Router pages
 │   ├── (auth)/             # Login, Register, Forgot Password
 │   ├── (main)/             # Listings, Agents, Map, Compare, Contact, About
@@ -267,17 +265,17 @@ firebase deploy --only firestore:rules,storage
 └── utils/                  # cn, formatPrice, slugify, calculateMortgage, etc.
 ```
 
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+ 
+
+ 
 ## 🎨 Design System
 
 | Token | Value |
 |-------|-------|
 | Background | `#0f172a` |
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 | Gold Accent | `#c8a97e` |
 | Heading Font | Playfair Display |
 | Body Font | DM Sans |
@@ -285,9 +283,9 @@ firebase deploy --only firestore:rules,storage
 ---
 
 Built by **WebAlchemistLabs** · PropVault © 2024
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+
+ 
 | Surface | `#1e293b` |
 | Gold Accent | `#c8a97e` |
 | Teal Accent | `#0f766e` |
@@ -311,12 +309,11 @@ Deploy to Vercel in one click. Add your environment variables in the Vercel dash
 
 ```bash
 npx vercel
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 ```
 
 ---
 
-<<<<<<< HEAD
+
 ## 🗺️ Google Maps
 
 Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` to `.env.local` for live maps.
@@ -325,10 +322,9 @@ Without it: styled placeholder with price-bubble pins, a link to Google Maps, an
 ---
 
 Built by **WebAlchemistLabs** · PropVault © 2024 · License #PROP2010-ON
-=======
+
 Built by [WebAlchemistLabs](https://github.com/WebAlchemistLabs) · PropVault © 2024
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+
+ 
+
+ 

@@ -1,55 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Home, TrendingUp, MessageSquare, DollarSign, ArrowUpRight, ArrowDownRight, Award, Clock, Plus } from 'lucide-react';
-import { getListings, getInquiries } from '@/lib/store';
-=======
 import { Home, Users, MessageSquare, TrendingUp, Plus, Database, DollarSign, Calendar, ArrowUpRight, ArrowDownRight, Award, Clock } from 'lucide-react';
 import { subscribeToListings, getAllInquiries } from '@/firebase/firestore';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-import { Home, Users, MessageSquare, TrendingUp, Plus, Database, DollarSign, Calendar, ArrowUpRight, ArrowDownRight, Award, Clock } from 'lucide-react';
-import { subscribeToListings, getAllInquiries } from '@/firebase/firestore';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { agents } from '@/data/agents';
 import { saleHistory, monthlyRevenue, agentPerformance } from '@/data/sales-history';
 import { formatPrice, cn } from '@/utils';
 import { Button } from '@/components/ui/Button';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import type { Listing } from '@/types';
-
-export default function AdminDashboard() {
-  const [listings, setListings] = useState<Listing[]>([]);
-  const [inquiryCount, setInquiryCount] = useState(0);
-  const [newInquiryCount, setNewInquiryCount] = useState(0);
-
-  useEffect(() => {
-    setListings(getListings());
-    const inqs = getInquiries();
-    setInquiryCount(inqs.length);
-    setNewInquiryCount(inqs.filter(i => i.status === 'new').length);
-  }, []);
-
-  const totalVolume = saleHistory.reduce((s, r) => s + r.salePrice, 0);
-  const totalCommission = saleHistory.reduce((s, r) => s + r.commission, 0);
-  const avgDOM = Math.round(saleHistory.reduce((s, r) => s + r.daysOnMarket, 0) / saleHistory.length);
-  const thisMonth = monthlyRevenue[monthlyRevenue.length - 1];
-  const lastMonth = monthlyRevenue[monthlyRevenue.length - 2];
-  const revenueChange = ((thisMonth.commission - lastMonth.commission) / lastMonth.commission * 100).toFixed(1);
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useToast } from '@/hooks';
 import { LoadingSpinner } from '@/components/ui/Display';
 import type { Listing, Inquiry } from '@/types';
@@ -84,48 +42,18 @@ export default function AdminDashboard() {
   const thisMonthRevenue = monthlyRevenue[monthlyRevenue.length - 1];
   const lastMonthRevenue = monthlyRevenue[monthlyRevenue.length - 2];
   const revenueChange = ((thisMonthRevenue.commission - lastMonthRevenue.commission) / lastMonthRevenue.commission * 100).toFixed(1);
-  const active = listings.filter(l => l.propertyStatus === 'available').length;
   const newInquiries = inquiries.filter(i => i.status === 'new').length;
 
   if (loading) return <div className="flex justify-center py-20"><LoadingSpinner className="w-8 h-8" /></div>;
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
   return (
     <div className="space-y-6">
       {/* Header */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className="flex items-start justify-between flex-wrap gap-4">
-=======
       <div className="flex items-start justify-between">
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      <div className="flex items-start justify-between">
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <div>
           <h1 className="font-playfair text-2xl font-bold text-white">Admin Dashboard</h1>
           <p className="text-slate-400 text-sm mt-0.5">PropVault GTA — Performance Overview · April 2024</p>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <Link href="/admin/listings/new">
-          <Button variant="gold" size="sm"><Plus className="w-4 h-4" /> New Listing</Button>
-        </Link>
-      </div>
-
-      {/* KPIs */}
-      <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
-        {[
-          { icon: DollarSign,    label: 'Total Sales Volume',  value: formatPrice(totalVolume, true),      sub: `${saleHistory.length} transactions`, color: 'text-emerald-400', bg: 'bg-emerald-500/10', delta: '+14.2% YoY', up: true },
-          { icon: TrendingUp,    label: 'Commission Earned',   value: formatPrice(totalCommission, true),  sub: `Avg ${formatPrice(Math.round(totalCommission/saleHistory.length),true)} / deal`, color: 'text-brand-gold', bg: 'bg-brand-gold/10', delta: `${revenueChange}% vs last month`, up: parseFloat(revenueChange) > 0 },
-          { icon: Clock,         label: 'Avg Days on Market',  value: `${avgDOM} days`,                    sub: '8 days below GTA avg', color: 'text-blue-400', bg: 'bg-blue-500/10', delta: '-3 days vs last quarter', up: true },
-          { icon: MessageSquare, label: 'Active Inquiries',    value: String(inquiryCount),                sub: `${newInquiryCount} new · ${listings.length} listings`, color: 'text-purple-400', bg: 'bg-purple-500/10', delta: `${newInquiryCount} need response`, up: false },
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <div className="flex gap-2.5">
           <Button variant="secondary" size="sm" onClick={handleSeed} loading={seeding}>
             <Database className="w-4 h-4" /> Seed DB
@@ -136,7 +64,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* ── KPI CARDS ──────────────────────────────────────────────────── */}
+      {/* KPI CARDS */}
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
         {[
           {
@@ -159,10 +87,6 @@ export default function AdminDashboard() {
             sub: `${newInquiries} new · ${listings.length} listings active`, color: 'text-purple-400', bg: 'bg-purple-500/10',
             delta: `${newInquiries} need response`, up: false,
           },
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         ].map((kpi, i) => (
           <div key={i} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
             <div className={cn('w-9 h-9 rounded-xl flex items-center justify-center mb-3', kpi.bg)}>
@@ -180,17 +104,7 @@ export default function AdminDashboard() {
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        {/* Revenue Chart */}
-=======
-
-        {/* ── REVENUE CHART ──────────────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-
-        {/* ── REVENUE CHART ──────────────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+        {/* REVENUE CHART */}
         <div className="xl:col-span-2 bg-slate-800/40 border border-slate-700 rounded-2xl p-5">
           <div className="flex items-center justify-between mb-5">
             <div>
@@ -198,89 +112,39 @@ export default function AdminDashboard() {
               <p className="text-xs text-slate-500 mt-0.5">Last 12 months · all agents</p>
             </div>
             <div className="text-right">
-<<<<<<< HEAD
-<<<<<<< HEAD
-              <p className="text-lg font-bold text-brand-gold">{formatPrice(thisMonth.commission, true)}</p>
-              <p className="text-xs text-slate-500">Apr 2024</p>
-            </div>
-          </div>
-          <div className="flex items-end gap-1.5 h-36">
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               <p className="text-lg font-bold text-brand-gold">{formatPrice(thisMonthRevenue.commission, true)}</p>
               <p className="text-xs text-slate-500">Apr 2024</p>
             </div>
           </div>
           {/* Bar chart */}
           <div className="flex items-end gap-1.5 h-40">
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             {monthlyRevenue.map((m, i) => {
               const maxVal = Math.max(...monthlyRevenue.map(x => x.commission));
               const pct = (m.commission / maxVal) * 100;
               const isLast = i === monthlyRevenue.length - 1;
               return (
                 <div key={m.month} className="flex-1 flex flex-col items-center gap-1 group">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  <div className="relative w-full flex flex-col justify-end" style={{ height: '110px' }}>
-=======
                   <div className="relative w-full flex flex-col justify-end" style={{ height: '120px' }}>
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                  <div className="relative w-full flex flex-col justify-end" style={{ height: '120px' }}>
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                     <div
                       className={cn('w-full rounded-t-md transition-all group-hover:opacity-80', isLast ? 'bg-brand-gold' : 'bg-slate-600 group-hover:bg-slate-500')}
                       style={{ height: `${pct}%` }}
                     />
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-slate-900 border border-slate-700 rounded px-1.5 py-0.5 text-[10px] text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                      {formatPrice(m.commission, true)}
-                    </div>
-                  </div>
-                  <p className="text-[9px] text-slate-500 rotate-45 origin-left whitespace-nowrap">{m.month}</p>
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                     {/* Tooltip */}
                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 border border-slate-700 rounded px-1.5 py-0.5 text-[10px] text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-10">
                       {formatPrice(m.commission, true)}
                     </div>
                   </div>
                   <p className="text-[9px] text-slate-500 rotate-45 origin-left mt-1 whitespace-nowrap">{m.month}</p>
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 </div>
               );
             })}
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <div className="flex gap-6 mt-6 pt-4 border-t border-slate-700">
-            {[
-              { label: 'YTD Volume',     value: formatPrice(monthlyRevenue.slice(9).reduce((s,m)=>s+m.volume,0), true) },
-              { label: 'YTD Commission', value: formatPrice(monthlyRevenue.slice(9).reduce((s,m)=>s+m.commission,0), true) },
-              { label: 'YTD Sales',      value: `${monthlyRevenue.slice(9).reduce((s,m)=>s+m.sales,0)} deals` },
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           {/* Summary row */}
           <div className="flex gap-6 mt-6 pt-4 border-t border-slate-700">
             {[
               { label: 'YTD Volume', value: formatPrice(monthlyRevenue.slice(9).reduce((s,m)=>s+m.volume,0), true) },
               { label: 'YTD Commission', value: formatPrice(monthlyRevenue.slice(9).reduce((s,m)=>s+m.commission,0), true) },
               { label: 'YTD Sales', value: `${monthlyRevenue.slice(9).reduce((s,m)=>s+m.sales,0)} deals` },
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             ].map((s, i) => (
               <div key={i}>
                 <p className="text-xs text-slate-500">{s.label}</p>
@@ -290,23 +154,13 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        {/* Agent Leaderboard */}
-=======
-        {/* ── AGENT LEADERBOARD ────────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-        {/* ── AGENT LEADERBOARD ────────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+        {/* AGENT LEADERBOARD */}
         <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-white">Agent Performance</h2>
             <Link href="/admin/agents" className="text-xs text-brand-gold hover:text-amber-400">View All</Link>
           </div>
           <div className="space-y-3">
-<<<<<<< HEAD
-<<<<<<< HEAD
             {agentPerformance.sort((a,b) => b.volume - a.volume).map((agent, i) => {
               const info = agents.find(a => a.id === agent.id);
               if (!info) return null;
@@ -324,36 +178,13 @@ export default function AdminDashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-white truncate">{info.name.split(' ')[0]} {info.name.split(' ')[1]?.[0]}.</p>
-                    <div className="flex-1 h-1 bg-slate-700 rounded-full overflow-hidden mt-1">
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-            {agentPerformance.sort((a,b) => b.volume - a.volume).map((agent, i) => (
-              <div key={agent.id} className="flex items-center gap-3">
-                <div className="relative shrink-0">
-                  <div className="w-8 h-8 rounded-full overflow-hidden">
-                    <Image src={agent.photo} alt={agent.name} width={32} height={32} className="object-cover" />
-                  </div>
-                  {i === 0 && (
-                    <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-gold flex items-center justify-center">
-                      <Award className="w-2.5 h-2.5 text-slate-900" />
-                    </div>
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold text-white truncate">{agent.name.split(' ')[0]} {agent.name.split(' ')[1]?.[0]}.</p>
-                  <div className="flex items-center gap-1.5 mt-0.5">
-                    <div className="flex-1 h-1 bg-slate-700 rounded-full overflow-hidden">
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-                      <div className="h-full bg-brand-gold rounded-full"
-                        style={{ width: `${(agent.volume / agentPerformance[0].volume) * 100}%` }} />
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <div className="flex-1 h-1 bg-slate-700 rounded-full overflow-hidden">
+                        <div className="h-full bg-brand-gold rounded-full"
+                          style={{ width: `${(agent.volume / agentPerformance[0].volume) * 100}%` }} />
+                      </div>
                     </div>
                   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <div className="text-right shrink-0">
                     <p className="text-xs font-bold text-white">{formatPrice(agent.volume, true)}</p>
                     <p className="text-[10px] text-slate-500">{agent.sales} sales</p>
@@ -361,36 +192,12 @@ export default function AdminDashboard() {
                 </div>
               );
             })}
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-                </div>
-                <div className="text-right shrink-0">
-                  <p className="text-xs font-bold text-white">{formatPrice(agent.volume, true)}</p>
-                  <p className="text-[10px] text-slate-500">{agent.sales} sales</p>
-                </div>
-              </div>
-            ))}
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        {/* Recent Sales */}
-=======
-
-        {/* ── RECENT SALES HISTORY ────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-
-        {/* ── RECENT SALES HISTORY ────────────────────────────────────── */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+        {/* RECENT SALES HISTORY */}
         <div className="bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
             <h2 className="font-semibold text-white">Recent Closed Sales</h2>
@@ -398,27 +205,12 @@ export default function AdminDashboard() {
           </div>
           <div className="divide-y divide-slate-800">
             {saleHistory.slice(0, 6).map(sale => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              const over = sale.salePrice > sale.listPrice;
-              const pct = (((sale.salePrice - sale.listPrice) / sale.listPrice) * 100).toFixed(1);
-              return (
-                <div key={sale.id} className="flex items-center gap-3 px-5 py-3 hover:bg-slate-700/20 transition-colors">
-                  <div className="relative w-12 h-10 rounded-lg overflow-hidden shrink-0">
-                    <Image src={sale.image} alt={sale.listingTitle} fill className="object-cover" unoptimized />
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               const overAsking = sale.salePrice > sale.listPrice;
               const pctDiff = (((sale.salePrice - sale.listPrice) / sale.listPrice) * 100).toFixed(1);
               return (
                 <div key={sale.id} className="flex items-center gap-3 px-5 py-3 hover:bg-slate-700/20 transition-colors">
                   <div className="relative w-12 h-10 rounded-lg overflow-hidden shrink-0">
-                    <Image src={sale.image} alt={sale.listingTitle} fill className="object-cover" />
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+                    <Image src={sale.image} alt={sale.listingTitle} fill className="object-cover" unoptimized />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-white truncate">{sale.listingTitle}</p>
@@ -426,32 +218,14 @@ export default function AdminDashboard() {
                   </div>
                   <div className="text-right shrink-0">
                     <p className="text-sm font-bold text-white">{formatPrice(sale.salePrice, true)}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <p className={cn('text-xs font-medium', over ? 'text-emerald-400' : 'text-slate-400')}>
-                      {over ? '+' : ''}{pct}% asking
-=======
                     <p className={cn('text-xs font-medium', overAsking ? 'text-emerald-400' : 'text-slate-400')}>
                       {overAsking ? `+${pctDiff}%` : `${pctDiff}%`} asking
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                    <p className={cn('text-xs font-medium', overAsking ? 'text-emerald-400' : 'text-slate-400')}>
-                      {overAsking ? `+${pctDiff}%` : `${pctDiff}%`} asking
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                     </p>
                   </div>
                 </div>
               );
             })}
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        </div>
-
-        {/* Active Listings Snapshot */}
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <div className="px-5 py-3 border-t border-slate-700 bg-slate-900/30">
             <Link href="/admin/inquiries" className="text-xs text-brand-gold hover:text-amber-400 transition-colors">
               View all sales history →
@@ -459,27 +233,12 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* ── ACTIVE LISTINGS SNAPSHOT ─────────────────────────────────── */}
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+        {/* ACTIVE LISTINGS SNAPSHOT */}
         <div className="bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
             <h2 className="font-semibold text-white">Active Listings</h2>
             <Link href="/admin/listings" className="text-xs text-brand-gold hover:text-amber-400">Manage →</Link>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <div className="grid grid-cols-4 divide-x divide-slate-700 border-b border-slate-700">
-            {[
-              { label: 'Available', count: listings.filter(l=>l.propertyStatus==='available').length, color: 'text-emerald-400' },
-              { label: 'Pending',   count: listings.filter(l=>l.propertyStatus==='pending').length,   color: 'text-amber-400' },
-              { label: 'Sold',      count: listings.filter(l=>l.propertyStatus==='sold').length,      color: 'text-red-400' },
-              { label: 'Featured',  count: listings.filter(l=>l.featured).length,                     color: 'text-brand-gold' },
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           {/* Status breakdown */}
           <div className="grid grid-cols-4 divide-x divide-slate-700 border-b border-slate-700">
             {[
@@ -487,10 +246,6 @@ export default function AdminDashboard() {
               { label: 'Pending', count: listings.filter(l=>l.propertyStatus==='pending').length, color: 'text-amber-400' },
               { label: 'Sold', count: listings.filter(l=>l.propertyStatus==='sold').length, color: 'text-red-400' },
               { label: 'Featured', count: listings.filter(l=>l.featured).length, color: 'text-brand-gold' },
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             ].map(s => (
               <div key={s.label} className="py-3 text-center">
                 <p className={cn('text-xl font-bold', s.color)}>{s.count}</p>
@@ -498,27 +253,12 @@ export default function AdminDashboard() {
               </div>
             ))}
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
           {/* Recent listings */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-          {/* Recent listings */}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <div className="divide-y divide-slate-800">
             {listings.slice(0, 5).map(l => (
               <div key={l.id} className="flex items-center gap-3 px-5 py-3 hover:bg-slate-700/20 transition-colors">
                 <div className="relative w-10 h-9 rounded-lg overflow-hidden shrink-0 bg-slate-700">
-<<<<<<< HEAD
-<<<<<<< HEAD
                   {l.images?.[0] && <Image src={l.images[0]} alt={l.title} fill className="object-cover" unoptimized />}
-=======
-                  {l.images?.[0] && <Image src={l.images[0]} alt={l.title} fill className="object-cover" />}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                  {l.images?.[0] && <Image src={l.images[0]} alt={l.title} fill className="object-cover" />}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-white truncate">{l.title}</p>
@@ -528,39 +268,20 @@ export default function AdminDashboard() {
                   <p className="text-sm font-bold text-brand-gold">{formatPrice(l.price, true)}</p>
                   <span className={cn('text-[10px] font-medium px-1.5 py-0.5 rounded-full',
                     l.propertyStatus === 'available' ? 'bg-emerald-500/20 text-emerald-400' :
-<<<<<<< HEAD
-<<<<<<< HEAD
                     l.propertyStatus === 'pending'   ? 'bg-amber-500/20 text-amber-400' :
                                                        'bg-red-500/20 text-red-400'
-=======
-                    l.propertyStatus === 'pending' ? 'bg-amber-500/20 text-amber-400' : 'bg-red-500/20 text-red-400'
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                    l.propertyStatus === 'pending' ? 'bg-amber-500/20 text-amber-400' : 'bg-red-500/20 text-red-400'
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   )}>{l.propertyStatus}</span>
                 </div>
               </div>
             ))}
           </div>
           <div className="px-5 py-3 border-t border-slate-700 bg-slate-900/30">
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Link href="/admin/listings/new" className="text-xs text-brand-gold hover:text-amber-400 transition-colors">+ Add new listing</Link>
           </div>
         </div>
       </div>
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-            <Link href="/admin/listings/new" className="text-xs text-brand-gold hover:text-amber-400 transition-colors">
-              + Add new listing
-            </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* ── INQUIRY PIPELINE ─────────────────────────────────────────────── */}
+      {/* INQUIRY PIPELINE */}
       <div className="bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
           <h2 className="font-semibold text-white">Inquiry Pipeline</h2>
@@ -577,85 +298,10 @@ export default function AdminDashboard() {
                 <tr>
                   {['Buyer', 'Property', 'Type', 'Date', 'Status'].map(h => (
                     <th key={h} className="text-left px-5 py-3 text-xs font-medium text-slate-400 uppercase">{h}</th>
-=======
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Navbar } from '@/components/layout/Navbar';
-import { listings } from '@/data/listings';
-import { agents } from '@/data/agents';
-import { LayoutDashboard, Home, Users, MessageSquare, TrendingUp, Settings } from 'lucide-react';
-import { formatPrice } from '@/utils';
-
-export const metadata: Metadata = { title: 'Admin Dashboard' };
-
-export default function AdminPage() {
-  const totalListings = listings.length;
-  const activeListings = listings.filter(l => l.propertyStatus === 'available').length;
-  const avgPrice = Math.round(listings.reduce((s, l) => s + l.price, 0) / listings.length);
-  const totalAgents = agents.length;
-
-  return (
-    <div className="min-h-screen bg-brand-dark">
-      <Navbar />
-      <main className="pt-24 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center">
-            <LayoutDashboard className="w-4 h-4 text-brand-gold" />
-          </div>
-          <h1 className="font-playfair text-2xl font-bold text-white">Admin Dashboard</h1>
-          <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Demo Mode</span>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {[
-            { icon: Home, label: 'Total Listings', value: totalListings, sub: `${activeListings} active` },
-            { icon: TrendingUp, label: 'Average Price', value: formatPrice(avgPrice, true), sub: 'Across GTA' },
-            { icon: Users, label: 'Agents', value: totalAgents, sub: `${agents.filter(a => a.featured).length} featured` },
-            { icon: MessageSquare, label: 'Inquiries', value: '0', sub: 'Demo mode' },
-          ].map((s, i) => (
-            <div key={i} className="p-5 bg-slate-800/50 border border-slate-700 rounded-xl">
-              <s.icon className="w-5 h-5 text-brand-gold mb-3" />
-              <div className="text-2xl font-bold text-white">{s.value}</div>
-              <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
-              <div className="text-xs text-slate-500 mt-1">{s.sub}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Quick links */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          {[
-            { href: '/admin/listings', icon: Home, label: 'Manage Listings', desc: 'View, edit, and publish properties' },
-            { href: '/admin/agents', icon: Users, label: 'Manage Agents', desc: 'Agent profiles and assignments' },
-            { href: '/admin/inquiries', icon: MessageSquare, label: 'Inquiries', desc: 'View and respond to buyer inquiries' },
-          ].map(link => (
-            <Link key={link.href} href={link.href} className="group p-6 bg-slate-800/40 border border-slate-700 rounded-xl hover:border-brand-gold/40 transition-all">
-              <link.icon className="w-6 h-6 text-brand-gold mb-3" />
-              <h3 className="font-semibold text-white group-hover:text-brand-gold transition-colors">{link.label}</h3>
-              <p className="text-xs text-slate-400 mt-1">{link.desc}</p>
-            </Link>
-          ))}
-        </div>
-
-        {/* Listings table preview */}
-        <div className="bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden">
-          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
-            <h2 className="font-semibold text-white">Recent Listings</h2>
-            <Link href="/admin/listings" className="text-xs text-brand-gold hover:text-amber-400 transition-colors">View All</Link>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-slate-900/40">
-                <tr>
-                  {['Title', 'City', 'Price', 'Type', 'Status'].map(h => (
-                    <th key={h} className="text-left px-5 py-3 text-xs font-medium text-slate-400 uppercase tracking-wide">{h}</th>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
                   ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
-<<<<<<< HEAD
                 {inquiries.slice(0, 6).map(inq => (
                   <tr key={inq.id} className="hover:bg-slate-700/20">
                     <td className="px-5 py-3 text-sm text-white font-medium">{inq.name}</td>
@@ -669,37 +315,14 @@ export default function AdminPage() {
                         inq.status === 'viewing-scheduled' ? 'bg-emerald-500/20 text-emerald-400' :
                         'bg-slate-700 text-slate-400'
                       )}>{inq.status}</span>
-=======
-                {listings.slice(0, 8).map(l => (
-                  <tr key={l.id} className="hover:bg-slate-700/20 transition-colors">
-                    <td className="px-5 py-3 text-sm text-white">{l.title}</td>
-                    <td className="px-5 py-3 text-sm text-slate-400">{l.city}</td>
-                    <td className="px-5 py-3 text-sm text-brand-gold font-medium">{formatPrice(l.price)}</td>
-                    <td className="px-5 py-3 text-sm text-slate-400 capitalize">{l.propertyType}</td>
-                    <td className="px-5 py-3">
-                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                        l.propertyStatus === 'available' ? 'bg-emerald-500/20 text-emerald-400' :
-                        l.propertyStatus === 'pending' ? 'bg-amber-500/20 text-amber-400' :
-                        'bg-red-500/20 text-red-400'
-                      }`}>{l.propertyStatus}</span>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-<<<<<<< HEAD
         )}
       </div>
-=======
-        </div>
-      </main>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

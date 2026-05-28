@@ -1,18 +1,20 @@
 'use client';
 import { useToastStore } from '@/hooks';
 import { cn } from '@/utils';
-import { CheckCircle, XCircle, Info, X } from 'lucide-react';
+import { CheckCircle, XCircle, Info, AlertTriangle, X } from 'lucide-react';
 
 const icons = {
   success: <CheckCircle className="w-4 h-4 text-emerald-400" />,
   error: <XCircle className="w-4 h-4 text-red-400" />,
   info: <Info className="w-4 h-4 text-blue-400" />,
+  warning: <AlertTriangle className="w-4 h-4 text-amber-400" />,
 };
 
 const colors = {
   success: 'border-emerald-500/30 bg-emerald-500/10',
   error: 'border-red-500/30 bg-red-500/10',
   info: 'border-blue-500/30 bg-blue-500/10',
+  warning: 'border-amber-500/30 bg-amber-500/10',
 };
 
 export function ToastContainer() {

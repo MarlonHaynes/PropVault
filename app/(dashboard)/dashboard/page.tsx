@@ -1,14 +1,7 @@
 'use client';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import Image from 'next/image';
 import Link from 'next/link';
-import { Heart, MessageSquare, TrendingUp, Search, Calendar, ArrowRight, MapPin, Bed, Bath, Maximize2, CheckCircle, Clock, Star, AlertCircle, Phone } from 'lucide-react';
+import { Heart, MessageSquare, TrendingUp, Search, Calendar, ArrowRight, MapPin, Bed, Bath, CheckCircle, Clock, Star, AlertCircle, Phone } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useSaved } from '@/context/SavedContext';
 import { useListingsContext } from '@/context/ListingsContext';
@@ -26,35 +19,10 @@ const marketStats = [
 
 const recentClosings = saleHistory.slice(0, 3);
 const upcomingViewing = demoViewings.find(v => v.status === 'upcoming');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-import { Heart, Search, MessageSquare, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
-import { useAuth } from '@/context/AuthContext';
-import { useSaved } from '@/context/SavedContext';
-import { listings } from '@/data/listings';
-import { ListingCard } from '@/components/listings/ListingCard';
-import { formatPrice } from '@/utils';
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function DashboardPage() {
   const { user } = useAuth();
   const { savedIds } = useSaved();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const { listings, loading } = useListingsContext();
   const firstName = user?.displayName?.split(' ')[0] || 'there';
   const savedListings = listings.filter(l => savedIds.includes(l.id)).slice(0, 3);
@@ -107,51 +75,10 @@ export default function DashboardPage() {
             </div>
             <p className="text-2xl font-bold text-white">{card.value}</p>
             <p className="text-xs text-slate-400 mt-0.5 group-hover:text-slate-300 transition-colors">{card.label}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-  const recentSaved = listings.filter(l => savedIds.includes(l.id)).slice(0, 3);
-
-  const cards = [
-    { icon: Heart, label: 'Saved Properties', value: savedIds.length, href: '/dashboard/saved', color: 'text-red-400' },
-    { icon: Search, label: 'Saved Searches', value: 0, href: '/dashboard/saved-searches', color: 'text-blue-400' },
-    { icon: MessageSquare, label: 'Inquiries Sent', value: 0, href: '/dashboard/inquiries', color: 'text-emerald-400' },
-    { icon: TrendingUp, label: 'Market Updates', value: 3, href: '/listings', color: 'text-brand-gold' },
-  ];
-
-  return (
-    <div>
-      <h1 className="font-playfair text-2xl font-bold text-white mb-1">
-        Welcome back, {user?.displayName?.split(' ')[0] || 'there'}
-      </h1>
-      <p className="text-slate-400 text-sm mb-8">Here&apos;s what&apos;s happening with your property search.</p>
-
-      {/* Stat cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        {cards.map((c, i) => (
-          <Link key={i} href={c.href} className="group p-5 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-brand-gold/40 transition-all">
-            <c.icon className={`w-5 h-5 mb-3 ${c.color}`} />
-            <div className="text-2xl font-bold text-white mb-0.5">{c.value}</div>
-            <div className="text-xs text-slate-400">{c.label}</div>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           </Link>
         ))}
       </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Saved properties */}
         <div className="lg:col-span-2 bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
@@ -229,55 +156,10 @@ export default function DashboardPage() {
               <p className="text-lg font-bold text-white">{s.value}</p>
               <p className="text-xs text-slate-400 mt-0.5">{s.label}</p>
               <p className={cn('text-xs font-medium mt-1.5', s.up ? 'text-emerald-400' : 'text-red-400')}>{s.up ? '↑' : '↓'} {s.delta}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* Recently saved */}
-      {recentSaved.length > 0 && (
-        <div>
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="font-semibold text-white">Recently Saved</h2>
-            <Link href="/dashboard/saved" className="text-xs text-brand-gold hover:text-amber-400 transition-colors">View All</Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {recentSaved.map(l => <ListingCard key={l.id} listing={l} />)}
-          </div>
-        </div>
-      )}
-
-      {/* Market snapshot */}
-      <div className="mt-10 p-6 bg-slate-800/40 border border-slate-700 rounded-xl">
-        <h2 className="font-semibold text-white mb-4">GTA Market Snapshot</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { label: 'Avg. Home Price', value: formatPrice(1_182_000), change: '+2.3%', up: true },
-            { label: 'Avg. Days on Market', value: '18 days', change: '-4 days', up: true },
-            { label: 'Active Listings', value: '8,423', change: '+12%', up: false },
-            { label: 'Sales/Listing Ratio', value: '68%', change: '+5%', up: true },
-          ].map((s, i) => (
-            <div key={i} className="p-4 bg-slate-800/60 rounded-lg">
-              <div className="text-sm font-semibold text-white">{s.value}</div>
-              <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
-              <div className={`text-xs mt-1.5 font-medium ${s.up ? 'text-emerald-400' : 'text-red-400'}`}>{s.change}</div>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
           ))}
         </div>
       </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
       {/* Recent Closings */}
       <div className="bg-slate-800/40 border border-slate-700 rounded-2xl overflow-hidden">
@@ -309,16 +191,6 @@ export default function DashboardPage() {
           })}
         </div>
       </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     </div>
   );
 }

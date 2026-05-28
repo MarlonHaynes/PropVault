@@ -1,30 +1,12 @@
 import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
-<<<<<<< HEAD
 import { Search, Home, MapPin, Users } from 'lucide-react';
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Search, Home, MapPin, Users } from 'lucide-react';
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         {/* Big 404 */}
         <div className="font-playfair text-[140px] font-bold leading-none select-none mb-2" style={{ color: 'rgba(200,169,126,0.12)' }}>
           404
@@ -54,28 +36,6 @@ export default function NotFound() {
           Looking for a specific property? Try our <Link href="/map-search" className="text-brand-gold hover:text-amber-400">map search</Link> or contact us at{' '}
           <a href="tel:+14165550100" className="text-brand-gold hover:text-amber-400">+1 (416) 555-0100</a>
         </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-        <div className="font-playfair text-[120px] font-bold text-brand-gold/20 leading-none select-none">404</div>
-        <h1 className="font-playfair text-3xl font-bold text-white -mt-4 mb-3">Page Not Found</h1>
-        <p className="text-slate-400 mb-8 max-w-md">The page you&apos;re looking for doesn&apos;t exist or has been moved.</p>
-        <div className="flex gap-4">
-          <Link href="/" className="h-10 px-6 rounded-lg bg-brand-gold text-slate-900 font-semibold text-sm flex items-center hover:bg-amber-400 transition-colors">
-            Go Home
-          </Link>
-          <Link href="/listings" className="h-10 px-6 rounded-lg border border-slate-600 text-slate-200 text-sm flex items-center hover:border-brand-gold hover:text-brand-gold transition-all">
-            Browse Listings
-          </Link>
-        </div>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       </div>
     </div>
   );

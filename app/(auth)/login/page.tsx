@@ -12,13 +12,7 @@ export default function LoginPage() {
   const { login, demoLogin } = useAuth();
   const router = useRouter();
   const { toast } = useToast();
-<<<<<<< HEAD
-<<<<<<< HEAD
   const [activeTab, setActiveTab] = useState<'user' | 'admin'>('user');
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ email: '', password: '' });
@@ -35,44 +29,20 @@ export default function LoginPage() {
 
   function handleDemo() {
     demoLogin();
-<<<<<<< HEAD
-<<<<<<< HEAD
     toast(
       activeTab === 'admin' ? 'Signed in to Admin Workspace' : 'Signed in as Demo User',
       'success'
     );
     router.push(activeTab === 'admin' ? '/admin' : '/dashboard');
-=======
-    toast('Signed in as Demo User', 'success');
-    router.push('/dashboard');
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-    toast('Signed in as Demo User', 'success');
-    router.push('/dashboard');
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   }
 
   return (
     <div className="min-h-screen bg-brand-dark flex items-center justify-center px-4">
       <div className="w-full max-w-md">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-brand-gold flex items-center justify-center">
               <span className="text-slate-900 font-bold font-mono text-sm">PV</span>
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-brand-gold flex items-center justify-center">
-              <span className="text-slate-900 font-bold font-mono">PV</span>
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
             <span className="font-playfair text-2xl font-bold text-white">PropVault</span>
           </Link>
@@ -82,8 +52,6 @@ export default function LoginPage() {
           <h1 className="font-playfair text-2xl font-bold text-white mb-1">Welcome Back</h1>
           <p className="text-slate-400 text-sm mb-6">Sign in to access your account</p>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
           <div className="mb-6">
             <div className="grid grid-cols-2 gap-2 p-1 rounded-xl bg-slate-900/60 border border-slate-700">
               <button
@@ -124,18 +92,6 @@ export default function LoginPage() {
                 onChange={e => setForm(f => ({ ...f, password: e.target.value }))} required placeholder="••••••••" />
               <button type="button" onClick={() => setShow(!show)}
                 className="absolute right-3 top-8 text-slate-400 hover:text-white transition-colors">
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input label="Email" type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required placeholder="you@example.com" />
-            <div className="relative">
-              <Input label="Password" type={show ? 'text' : 'password'} value={form.password} onChange={e => setForm(f => ({ ...f, password: e.target.value }))} required placeholder="••••••••" />
-              <button type="button" onClick={() => setShow(!show)} className="absolute right-3 top-8 text-slate-400 hover:text-white">
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 {show ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
@@ -152,37 +108,15 @@ export default function LoginPage() {
           </div>
 
           <Button variant="secondary" fullWidth onClick={handleDemo}>
-<<<<<<< HEAD
-<<<<<<< HEAD
             {activeTab === 'admin' ? 'Continue to Admin Workspace' : 'Continue as Client'}
           </Button>
 
-          <p className="text-center text-xs text-slate-500 mt-4">
-            {activeTab === 'admin'
-              ? ''
-              : ''}
-          </p>
-
-          {activeTab === 'user' ? (
+          {activeTab === 'user' && (
             <p className="text-center text-sm text-slate-400 mt-4">
               No account?{' '}
               <Link href="/register" className="text-brand-gold hover:text-amber-400 transition-colors">Create one free</Link>
             </p>
-          ) : null}
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-            Continue as Demo User
-          </Button>
-
-          <p className="text-center text-sm text-slate-400 mt-5">
-            No account?{' '}
-            <Link href="/register" className="text-brand-gold hover:text-amber-400 transition-colors">Create one free</Link>
-          </p>
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+          )}
         </div>
       </div>
     </div>

@@ -6,13 +6,6 @@ import { Footer } from '@/components/layout/Footer';
 import { SectionHeader } from '@/components/ui/Display';
 import { AgentCard } from '@/components/agents/AgentCard';
 import { agents } from '@/data/agents';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { Award, Shield, TrendingUp, Users, Home, Star, CheckCircle, MapPin, Globe } from 'lucide-react';
 
 export const metadata: Metadata = { title: 'About PropVault — GTA\'s Premier Real Estate Platform' };
@@ -48,7 +41,7 @@ const values = [
   { icon: TrendingUp, title: 'Data-Driven',           desc: 'Every recommendation is backed by real market data, neighbourhood analytics, and 14 years of GTA-specific experience.' },
   { icon: Users,      title: 'Community Rooted',      desc: 'We live and work in the communities we serve. Our agents aren\'t just advisors — they\'re your neighbours.' },
   { icon: Globe,      title: 'Globally Connected',    desc: 'Part of an international network giving our clients access to buyers and sellers across 40+ countries.' },
-  { icon: CheckCircle,'title': 'Relentlessly Reliable', desc: '97% on-time move rate, same-day inquiry response, and a dedicated client success team available 7 days a week.' },
+  { icon: CheckCircle, title: 'Relentlessly Reliable', desc: '97% on-time move rate, same-day inquiry response, and a dedicated client success team available 7 days a week.' },
   { icon: Star,       title: 'Award-Winning',         desc: 'Recognized by TRREB, RECO, Toronto Life, and the Globe & Mail for excellence in service and innovation.' },
 ];
 
@@ -60,21 +53,6 @@ const stats = [
   { value: '48',      label: 'Expert Agents' },
   { value: '15+',     label: 'GTA Cities' },
 ];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-import { stats } from '@/data';
-import { Target, Heart, Zap } from 'lucide-react';
-
-export const metadata: Metadata = { title: 'About Us' };
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
 export default function AboutPage() {
   const featured = agents.filter(a => a.featured).slice(0, 4);
@@ -83,13 +61,6 @@ export default function AboutPage() {
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── HERO ────────────────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
@@ -107,42 +78,10 @@ export default function AboutPage() {
             For 14 years, PropVault has guided over 12,400 families through one of life's biggest decisions — buying,
             selling, or renting in the Greater Toronto Area. We combine deep local expertise with cutting-edge technology
             to deliver results that exceed expectations, every time.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <Image src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" alt="About" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 to-brand-dark" />
-        </div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <span className="text-xs tracking-widest text-brand-gold uppercase mb-4 block">Our Story</span>
-          <h1 className="font-playfair text-5xl lg:text-6xl font-bold text-white mb-6">
-            Reimagining Real Estate<br /><span className="text-brand-gold italic">Across the GTA</span>
-          </h1>
-          <p className="text-lg text-slate-300 leading-relaxed">
-            PropVault was built with one belief: finding your home should be inspiring, not overwhelming.
-            We combine local expertise, cutting-edge tools, and human connection to make that possible.
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           </p>
         </div>
       </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── STATS BAR ───────────────────────────────────────────────────── */}
       <section className="border-y border-slate-800 bg-slate-900/60">
         <div className="max-w-7xl mx-auto px-4">
@@ -151,38 +90,12 @@ export default function AboutPage() {
               <div key={i} className="py-8 text-center px-4">
                 <div className="font-playfair text-3xl font-bold text-brand-gold">{s.value}</div>
                 <div className="text-xs text-slate-400 mt-1">{s.label}</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* Stats */}
-      <section className="py-12 bg-slate-900/50 border-y border-slate-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="font-playfair text-4xl font-bold text-brand-gold">{s.value}</div>
-                <div className="text-sm text-slate-400 mt-1">{s.label}</div>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
               </div>
             ))}
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── OUR STORY ────────────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -221,7 +134,6 @@ export default function AboutPage() {
             <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-700 hidden md:block" />
             {timeline.map((item, i) => (
               <div key={i} className={`relative flex flex-col md:flex-row gap-6 mb-10 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Content */}
                 <div className="flex-1 md:text-right md:pr-10">
                   {i % 2 === 0 ? (
                     <>
@@ -231,9 +143,7 @@ export default function AboutPage() {
                     </>
                   ) : <div />}
                 </div>
-                {/* Center dot */}
                 <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-dark z-10" />
-                {/* Right content */}
                 <div className="flex-1 md:pl-10">
                   {i % 2 !== 0 ? (
                     <>
@@ -260,44 +170,11 @@ export default function AboutPage() {
               </div>
               <h3 className="font-playfair text-lg font-bold text-white mb-2">{v.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed">{v.desc}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* Values */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader label="Our Values" title="What Drives Us" center />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {[
-            { icon: Target, title: 'Results-First', desc: 'Every decision we make is oriented toward your outcome — whether you\'re buying, selling, or investing in GTA real estate.' },
-            { icon: Heart, title: 'Client-Obsessed', desc: 'Our agents build relationships that last beyond a single transaction. Your success is our reputation.' },
-            { icon: Zap, title: 'Innovation-Led', desc: 'We leverage the latest technology — from AI-powered search to real-time market analytics — so you stay ahead.' },
-          ].map((v, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-slate-800/40 border border-slate-700 text-center">
-              <div className="w-14 h-14 rounded-2xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-5">
-                <v.icon className="w-7 h-7 text-brand-gold" />
-              </div>
-              <h3 className="font-playfair text-xl font-bold text-white mb-3">{v.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{v.desc}</p>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </div>
           ))}
         </div>
       </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── AWARDS ───────────────────────────────────────────────────────── */}
       <section className="py-20 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,60 +223,15 @@ export default function AboutPage() {
           <div className="text-center mt-8">
             <Link href="/agents" className="inline-flex items-center gap-2 h-10 px-8 rounded-xl border border-slate-600 text-slate-200 font-medium hover:border-brand-gold hover:text-brand-gold transition-all text-sm">
               Meet All 48 Agents →
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* Team */}
-      <section className="py-20 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader label="Meet the Team" title="Our Top Agents" center />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {featured.map(a => <AgentCard key={a.id} agent={a} />)}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/agents" className="inline-flex items-center gap-2 text-sm text-brand-gold hover:gap-3 transition-all">
-              View All Agents →
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
             </Link>
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="py-20 max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-playfair text-4xl font-bold text-white mb-4">Ready to Work With Us?</h2>
         <p className="text-slate-400 mb-8 text-lg">Join the 12,400+ GTA families who found their perfect home with PropVault.</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-      {/* CTA */}
-      <section className="py-20 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="font-playfair text-4xl font-bold text-white mb-4">
-          Ready to Start Your Journey?
-        </h2>
-        <p className="text-slate-400 mb-8">Whether you&apos;re a first-time buyer or seasoned investor, we have the right agent and the right property for you.</p>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/listings" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl bg-brand-gold text-slate-900 font-semibold hover:bg-amber-400 transition-colors">
             Browse Listings

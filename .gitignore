@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # dependencies
 /node_modules
 
@@ -34,7 +34,7 @@ pnpm-debug.log*
 
 # coverage
 /coverage
-=======
+
 node_modules
 .next
 dist
@@ -44,4 +44,4 @@ build
 .vercel
 coverage
 .DS_Store
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
+ 

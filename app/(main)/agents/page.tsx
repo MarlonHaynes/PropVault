@@ -1,30 +1,11 @@
 import type { Metadata } from 'next';
-<<<<<<< HEAD
 import Link from 'next/link';
 import Image from 'next/image';
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-import Link from 'next/link';
-import Image from 'next/image';
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { AgentCard } from '@/components/agents/AgentCard';
 import { SectionHeader } from '@/components/ui/Display';
 import { agents } from '@/data/agents';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { agentPerformance } from '@/data/sales-history';
 import { Star, Award, TrendingUp, Phone } from 'lucide-react';
 import { formatPrice } from '@/utils';
@@ -36,13 +17,6 @@ export const metadata: Metadata = {
 
 const featured = agents.filter(a => a.featured);
 const rest = agents.filter(a => !a.featured);
-
-const specialtyGroups = [
-  { label: 'Luxury & Prestige',   agents: ['agent-001', 'agent-003'] },
-  { label: 'Investment & Growth', agents: ['agent-002', 'agent-008'] },
-  { label: 'Family Homes',        agents: ['agent-004', 'agent-009'] },
-  { label: 'New Developments',    agents: ['agent-005', 'agent-010'] },
-];
 
 export default function AgentsPage() {
   return (
@@ -141,47 +115,6 @@ export default function AgentsPage() {
         </div>
       </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-
-export const metadata: Metadata = { title: 'Our Agents' };
-
-export default function AgentsPage() {
-  const featured = agents.filter(a => a.featured);
-  const others = agents.filter(a => !a.featured);
-
-  return (
-    <div className="min-h-screen bg-brand-dark">
-      <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <SectionHeader label="Our Team" title="GTA's Top Real Estate Experts" center
-              subtitle="Our agents combine deep local knowledge with proven results to guide you through every step of your real estate journey." />
-          </div>
-
-          {/* Featured */}
-          <h2 className="font-playfair text-xl font-semibold text-white mb-6">Featured Agents</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mb-12">
-            {featured.map(a => <AgentCard key={a.id} agent={a} />)}
-          </div>
-
-          {/* All Agents */}
-          <h2 className="font-playfair text-xl font-semibold text-white mb-6">All Agents</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-            {others.map(a => <AgentCard key={a.id} agent={a} />)}
-          </div>
-        </div>
-      </main>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
       <Footer />
     </div>
   );

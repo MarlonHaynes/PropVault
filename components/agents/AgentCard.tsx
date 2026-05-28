@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Star, Phone, Mail, Award } from 'lucide-react';
-import { DEFAULT_AGENT_PHOTO } from '@/utils';
-=======
-import Image from 'next/image';
-import Link from 'next/link';
-import { Star, Phone, Mail, Award } from 'lucide-react';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-import Image from 'next/image';
-import Link from 'next/link';
-import { Star, Phone, Mail, Award } from 'lucide-react';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import type { Agent } from '@/types';
 
 export function AgentCard({ agent }: { agent: Agent }) {
@@ -22,15 +8,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
     <div className="group bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-brand-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand-gold/5">
       <div className="p-6 text-center">
         <div className="relative w-24 h-24 mx-auto mb-4">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <Image src={agent.photo || DEFAULT_AGENT_PHOTO} alt={agent.name} fill className="object-cover rounded-full" unoptimized />
-=======
           <Image src={agent.photo} alt={agent.name} fill className="object-cover rounded-full" />
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-          <Image src={agent.photo} alt={agent.name} fill className="object-cover rounded-full" />
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           {agent.featured && (
             <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-brand-gold flex items-center justify-center">
               <Award className="w-3.5 h-3.5 text-slate-900" />

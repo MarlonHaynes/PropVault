@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
-=======
-<<<<<<< HEAD
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-// app/(main)/map-search/page.tsx
-'use client';
-
-import { useState } from 'react';
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -25,29 +11,15 @@ import {
   Heart,
   Search,
   SlidersHorizontal,
-<<<<<<< HEAD
-<<<<<<< HEAD
   X,
   ArrowRight,
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
-=======
-} from 'lucide-react';
-import { Navbar } from '@/components/layout/Navbar';
-import { PropertyMap } from '@/components/map/PropertyMap';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-} from 'lucide-react';
-import { Navbar } from '@/components/layout/Navbar';
-import { PropertyMap } from '@/components/map/PropertyMap';
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 import { useListingsContext } from '@/context/ListingsContext';
 import { useSaved } from '@/context/SavedContext';
 import { useAuth } from '@/context/AuthContext';
 import { useToast } from '@/hooks';
 import { formatPrice, getListingSlug, cn } from '@/utils';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { LoadingSpinner, StatusBadge } from '@/components/ui/Display';
 import type { Listing } from '@/types';
 
@@ -62,17 +34,6 @@ const CITY_FILTERS = [
   'Brampton',
 ];
 
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-import { LoadingSpinner } from '@/components/ui/Display';
-import type { Listing } from '@/types';
-
-const CITY_FILTERS = ['All', 'Toronto', 'Mississauga', 'Oakville', 'Vaughan', 'Markham', 'Richmond Hill', 'Brampton'];
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 const TYPE_FILTERS = [
   { value: '', label: 'Any Type' },
   { value: 'sale', label: 'For Sale' },
@@ -80,8 +41,6 @@ const TYPE_FILTERS = [
   { value: 'new-development', label: 'New Dev' },
 ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 const DEFAULT_CENTER = { lat: 43.6532, lng: -79.3832 };
 
 declare global {
@@ -148,44 +107,21 @@ function createAdvancedMarkerContent(isSelected: boolean) {
   return el;
 }
 
-function updateAdvancedMarkerContent(
-  marker: AdvancedMarkerInstance,
-  isSelected: boolean
-) {
-  if (!marker.__contentEl) return;
 
-  marker.__contentEl.style.width = isSelected ? '22px' : '20px';
-  marker.__contentEl.style.height = isSelected ? '22px' : '20px';
-  marker.__contentEl.style.background = isSelected ? '#f4d08a' : '#c8a97e';
-  marker.zIndex = isSelected ? 999 : 1;
-}
-
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 export default function MapSearchPage() {
   const { listings: allListings, loading } = useListingsContext();
   const { isSaved, toggleSave } = useSaved();
   const { user } = useAuth();
   const { toast } = useToast();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   const [city, setCity] = useState('All');
   const [typeFilter, setTypeFilter] = useState('');
   const [keyword, setKeyword] = useState('');
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedListing, setSelectedListing] = useState<Listing | null>(null);
   const [showFilters, setShowFilters] = useState(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapError, setMapError] = useState(false);
   const [resolvedCoords, setResolvedCoords] = useState<Record<string, ResolvedCoord>>({});
@@ -511,24 +447,6 @@ export default function MapSearchPage() {
     mapInstanceRef.current.panTo(coords);
     mapInstanceRef.current.setZoom(14);
   }, [selectedListing, resolvedCoords]);
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-
-  const filtered = allListings.filter(l => {
-    const matchCity = city === 'All' || l.city === city;
-    const matchType = !typeFilter || l.listingType === typeFilter;
-    const matchKw =
-      !keyword ||
-      l.title.toLowerCase().includes(keyword.toLowerCase()) ||
-      l.neighborhood.toLowerCase().includes(keyword.toLowerCase());
-
-    return matchCity && matchType && matchKw;
-  });
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
   async function handleSave(e: React.MouseEvent, listing: Listing) {
     e.preventDefault();
@@ -548,8 +466,6 @@ export default function MapSearchPage() {
       <Navbar />
 
       <div className="flex flex-1 overflow-hidden pt-16">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <div className="flex-1 relative bg-slate-900 overflow-hidden">
           {mapError || !apiKey ? (
             <div className="absolute inset-0 flex items-center justify-center bg-slate-950">
@@ -655,21 +571,6 @@ export default function MapSearchPage() {
               </p>
             </div>
           )}
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-        <div className="flex-1 relative overflow-hidden">
-          <PropertyMap
-            listings={filtered}
-            selectedListing={selectedListing}
-            setSelectedListing={setSelectedListing}
-            hoveredId={hoveredId}
-            setHoveredId={setHoveredId}
-          />
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
         </div>
 
         <div className="w-[420px] shrink-0 flex flex-col bg-slate-900 border-l border-slate-800">
@@ -679,15 +580,7 @@ export default function MapSearchPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                 <input
                   value={keyword}
-<<<<<<< HEAD
-<<<<<<< HEAD
                   onChange={(e) => setKeyword(e.target.value)}
-=======
-                  onChange={e => setKeyword(e.target.value)}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                  onChange={e => setKeyword(e.target.value)}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   placeholder="Search listings..."
                   className="w-full h-9 pl-9 pr-3 text-sm bg-slate-800 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-gold transition-colors"
                 />
@@ -708,15 +601,7 @@ export default function MapSearchPage() {
 
             {showFilters && (
               <div className="flex gap-2">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 {TYPE_FILTERS.map((t) => (
-=======
-                {TYPE_FILTERS.map(t => (
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                {TYPE_FILTERS.map(t => (
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   <button
                     key={t.value}
                     onClick={() => setTypeFilter(t.value)}
@@ -734,15 +619,7 @@ export default function MapSearchPage() {
             )}
 
             <div className="flex gap-1.5 overflow-x-auto pb-0.5 scrollbar-none">
-<<<<<<< HEAD
-<<<<<<< HEAD
               {CITY_FILTERS.map((c) => (
-=======
-              {CITY_FILTERS.map(c => (
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-              {CITY_FILTERS.map(c => (
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                 <button
                   key={c}
                   onClick={() => setCity(c)}
@@ -753,85 +630,10 @@ export default function MapSearchPage() {
                       : 'border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200'
                   )}
                 >
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-'use client';
-import { useState } from 'react';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import { ListingCard } from '@/components/listings/ListingCard';
-import { listings } from '@/data/listings';
-import { MapPin } from 'lucide-react';
-
-const cities = ['All', 'Toronto', 'Mississauga', 'Oakville', 'Vaughan', 'Markham', 'Richmond Hill', 'Brampton'];
-
-export default function MapSearchPage() {
-  const [city, setCity] = useState('All');
-  const filtered = city === 'All' ? listings.slice(0, 9) : listings.filter(l => l.city === city).slice(0, 9);
-
-  return (
-    <div className="min-h-screen bg-brand-dark">
-      <Navbar />
-      <main className="pt-20">
-        <div className="flex flex-col lg:flex-row h-[calc(100vh-80px)]">
-          {/* Map placeholder */}
-          <div className="lg:flex-1 bg-slate-800 relative flex items-center justify-center border-r border-slate-700">
-            <div className="absolute inset-0 overflow-hidden opacity-10">
-              <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #c8a97e 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-            </div>
-            <div className="text-center z-10">
-              <div className="w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-brand-gold" />
-              </div>
-              <h3 className="text-white font-playfair text-2xl font-semibold mb-2">Interactive Map</h3>
-              <p className="text-slate-400 text-sm max-w-xs">
-                Connect a Google Maps API key in <span className="text-brand-gold font-mono text-xs">.env.local</span> to enable the full interactive map experience.
-              </p>
-            </div>
-            {/* Fake pins */}
-            {['10%,20%', '30%,60%', '55%,35%', '70%,70%', '80%,25%', '45%,80%'].map((pos, i) => {
-              const [top, left] = pos.split(',');
-              return (
-                <div key={i} className="absolute" style={{ top, left }}>
-                  <div className="relative">
-                    <div className="w-8 h-8 rounded-full bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center animate-pulse cursor-pointer hover:scale-110 transition-transform">
-                      <MapPin className="w-4 h-4 text-brand-gold" />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Listings panel */}
-          <div className="w-full lg:w-96 flex flex-col border-l border-slate-700">
-            {/* City filter */}
-            <div className="p-4 border-b border-slate-700 flex gap-2 overflow-x-auto">
-              {cities.map(c => (
-                <button key={c} onClick={() => setCity(c)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                    city === c ? 'bg-brand-gold text-slate-900' : 'border border-slate-600 text-slate-400 hover:border-slate-400'
-                  }`}>
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   {c}
                 </button>
               ))}
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 
             <p className="text-xs text-slate-500">
               {loading ? 'Loading...' : `${filtered.length} propert${filtered.length === 1 ? 'y' : 'ies'} found`}
@@ -841,13 +643,7 @@ export default function MapSearchPage() {
                     setCity('All');
                     setTypeFilter('');
                     setKeyword('');
-<<<<<<< HEAD
-<<<<<<< HEAD
                     setSelectedListing(null);
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   }}
                   className="ml-2 text-brand-gold hover:text-amber-400 transition-colors"
                 >
@@ -870,47 +666,19 @@ export default function MapSearchPage() {
               </div>
             ) : (
               <div className="divide-y divide-slate-800">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 {filtered.map((listing) => {
-=======
-                {filtered.map(listing => {
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                {filtered.map(listing => {
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   const saved = isSaved(listing.id);
                   const isSelected = selectedListing?.id === listing.id;
                   const slug = getListingSlug(listing);
 
                   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <div
                       key={listing.id}
-=======
-                    <Link
-                      key={listing.id}
-                      href={`/listings/${slug}`}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                    <Link
-                      key={listing.id}
-                      href={`/listings/${slug}`}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                       onMouseEnter={() => setHoveredId(listing.id)}
                       onMouseLeave={() => setHoveredId(null)}
                       onClick={() => setSelectedListing(listing)}
                       className={cn(
-<<<<<<< HEAD
-<<<<<<< HEAD
                         'flex gap-3 p-4 hover:bg-slate-800/60 transition-all duration-150 group relative cursor-pointer',
-=======
-                        'flex gap-3 p-4 hover:bg-slate-800/60 transition-all duration-150 group relative',
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                        'flex gap-3 p-4 hover:bg-slate-800/60 transition-all duration-150 group relative',
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                         isSelected && 'bg-slate-800/80 border-l-2 border-brand-gold',
                         hoveredId === listing.id && !isSelected && 'bg-slate-800/40'
                       )}
@@ -952,13 +720,7 @@ export default function MapSearchPage() {
                             <p className="text-sm font-semibold text-white group-hover:text-brand-gold transition-colors line-clamp-1 leading-tight">
                               {listing.title}
                             </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                             <p className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
                               <MapPin className="w-3 h-3 shrink-0" />
                               <span className="truncate">
@@ -968,15 +730,7 @@ export default function MapSearchPage() {
                           </div>
 
                           <button
-<<<<<<< HEAD
-<<<<<<< HEAD
                             onClick={(e) => handleSave(e, listing)}
-=======
-                            onClick={e => handleSave(e, listing)}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                            onClick={e => handleSave(e, listing)}
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                             className={cn(
                               'shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all',
                               saved
@@ -1017,8 +771,6 @@ export default function MapSearchPage() {
                             {listing.propertyType}
                           </span>
                         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
                         <div className="mt-3">
                           <Link
@@ -1032,14 +784,6 @@ export default function MapSearchPage() {
                         </div>
                       </div>
                     </div>
-=======
-                      </div>
-                    </Link>
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-                      </div>
-                    </Link>
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
                   );
                 })}
               </div>
@@ -1049,25 +793,4 @@ export default function MapSearchPage() {
       </div>
     </div>
   );
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-}
-=======
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {filtered.map(l => <ListingCard key={l.id} listing={l} layout="list" />)}
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-}
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508

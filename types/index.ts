@@ -12,7 +12,7 @@ export type PropertyType =
 
 export interface NearbyPlace {
   name: string;
-  type: "school" | "transit" | "shopping" | "restaurant" | "park" | "hospital";
+  type: "school" | "transit" | "shopping" | "restaurant" | "park" | "hospital" | "entertainment" | "education";
   distance: string;
 }
 
@@ -174,20 +174,7 @@ export interface MortgageInput {
   homePrice: number;
   downPayment: number;
   interestRate: number;
-<<<<<<< HEAD
   amortizationYears: number;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  amortizationYears: number;
-=======
-  amortization: number;
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-  amortization: number;
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
 }
 
 export interface MortgageResult {

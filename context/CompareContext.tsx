@@ -16,16 +16,6 @@ export function CompareProvider({ children }: { children: ReactNode }) {
   const [compareList, setCompareList] = useState<Listing[]>([]);
 
   function addToCompare(listing: Listing) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (compareList.length >= 4 || compareList.find(l => l.id === listing.id)) return;
-    setCompareList(prev => [...prev, listing]);
-  }
-  function removeFromCompare(id: string) { setCompareList(prev => prev.filter(l => l.id !== id)); }
-  function isInCompare(id: string) { return compareList.some(l => l.id === id); }
-=======
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
     if (compareList.length >= 4) return;
     if (!compareList.find(l => l.id === listing.id)) {
       setCompareList(prev => [...prev, listing]);
@@ -40,10 +30,6 @@ export function CompareProvider({ children }: { children: ReactNode }) {
     return compareList.some(l => l.id === id);
   }
 
-<<<<<<< HEAD
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
   function clearCompare() { setCompareList([]); }
 
   return (

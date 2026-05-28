@@ -28,20 +28,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="min-h-screen bg-brand-dark">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-<<<<<<< HEAD
         <div className="flex gap-8 items-start">
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div className="flex gap-8 items-start">
-=======
-        <div className="flex gap-8">
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
-=======
-        <div className="flex gap-8">
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
->>>>>>> d789c691ffb31c07fedbb5394b08ef636370b508
           <DashboardSidebar />
           <main className="flex-1 min-w-0">{children}</main>
         </div>

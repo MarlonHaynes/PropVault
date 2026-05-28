@@ -17,8 +17,8 @@ export function MortgageCalculator({ defaultPrice }: { defaultPrice?: number }) 
         display={formatPrice(input.downPayment)} onChange={v => update('downPayment', v)} />
       <SliderField label="Interest Rate" value={input.interestRate} min={1} max={12} step={0.1}
         display={`${input.interestRate.toFixed(1)}%`} onChange={v => update('interestRate', v)} />
-      <SliderField label="Amortization" value={input.amortization} min={5} max={30} step={5}
-        display={`${input.amortization} years`} onChange={v => update('amortization', v)} />
+      <SliderField label="Amortization" value={input.amortizationYears} min={5} max={30} step={5}
+        display={`${input.amortizationYears} years`} onChange={v => update('amortizationYears', v)} />
 
       <div className="pt-4 border-t border-slate-700 space-y-3">
         <ResultRow label="Monthly Payment" value={formatPrice(result.monthlyPayment)} highlight />

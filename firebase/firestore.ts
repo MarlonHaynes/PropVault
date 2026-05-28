@@ -1,24 +1,15 @@
 import {
   doc, setDoc, getDoc, updateDoc, collection,
-<<<<<<< HEAD
   addDoc, getDocs, query, where, deleteDoc,
-  serverTimestamp, orderBy, limit, onSnapshot,
+  serverTimestamp, orderBy, onSnapshot,
   Unsubscribe, DocumentData, QuerySnapshot,
-  writeBatch, increment,
+  writeBatch,
 } from 'firebase/firestore';
 import { db, isDemoMode } from './config';
 import type { Listing, UserProfile, Inquiry, SavedSearch } from '@/types';
 import { seedListings } from '@/data/listings';
 
 // ── localStorage helpers ─────────────────────────────────────────────────────
-=======
-  addDoc, getDocs, query, where, deleteDoc, serverTimestamp,
-} from 'firebase/firestore';
-import { db, isDemoMode } from './config';
-import type { UserProfile, Inquiry, SavedProperty, SavedSearch } from '@/types';
-
-// ── Local mock storage helpers ──────────────────────────────────────────────
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 function ls<T>(key: string, fallback: T): T {
   if (typeof window === 'undefined') return fallback;
   try { return JSON.parse(localStorage.getItem(key) || 'null') ?? fallback; } catch { return fallback; }
@@ -27,7 +18,6 @@ function lsSet(key: string, value: unknown) {
   if (typeof window !== 'undefined') localStorage.setItem(key, JSON.stringify(value));
 }
 
-<<<<<<< HEAD
 // ── LISTINGS (Live from Firestore) ────────────────────────────────────────────
 
 /** Subscribe to all listings in real time */
@@ -118,9 +108,6 @@ export async function seedFirestoreListings(): Promise<void> {
 }
 
 // ── USER PROFILE ─────────────────────────────────────────────────────────────
-=======
-// ── User Profile ─────────────────────────────────────────────────────────────
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 export async function createUserProfile(uid: string, data: Partial<UserProfile>) {
   if (isDemoMode) { lsSet(`propvault_profile_${uid}`, { uid, ...data, createdAt: new Date().toISOString() }); return; }
   await setDoc(doc(db!, 'users', uid), { uid, ...data, createdAt: serverTimestamp() }, { merge: true });
@@ -141,11 +128,7 @@ export async function updateUserProfile(uid: string, data: Partial<UserProfile>)
   await updateDoc(doc(db!, 'users', uid), data);
 }
 
-<<<<<<< HEAD
 // ── INQUIRIES ────────────────────────────────────────────────────────────────
-=======
-// ── Inquiries ────────────────────────────────────────────────────────────────
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 export async function createInquiry(inquiry: Omit<Inquiry, 'id' | 'createdAt'>): Promise<string> {
   if (isDemoMode) {
     const id = `inq-${Date.now()}`;
@@ -165,7 +148,6 @@ export async function getUserInquiries(uid: string): Promise<Inquiry[]> {
   return snap.docs.map(d => ({ id: d.id, ...d.data() }) as Inquiry);
 }
 
-<<<<<<< HEAD
 export async function getAllInquiries(): Promise<Inquiry[]> {
   if (isDemoMode) return ls<Inquiry[]>('propvault_inquiries', []);
   const snap = await getDocs(query(collection(db!, 'inquiries'), orderBy('createdAt', 'desc')));
@@ -173,9 +155,6 @@ export async function getAllInquiries(): Promise<Inquiry[]> {
 }
 
 // ── SAVED PROPERTIES ─────────────────────────────────────────────────────────
-=======
-// ── Saved Properties ─────────────────────────────────────────────────────────
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 export async function saveProperty(uid: string, listingId: string): Promise<void> {
   if (isDemoMode) {
     const list = ls<string[]>(`propvault_saved_${uid}`, []);
@@ -187,12 +166,7 @@ export async function saveProperty(uid: string, listingId: string): Promise<void
 
 export async function unsaveProperty(uid: string, listingId: string): Promise<void> {
   if (isDemoMode) {
-<<<<<<< HEAD
     lsSet(`propvault_saved_${uid}`, ls<string[]>(`propvault_saved_${uid}`, []).filter(id => id !== listingId));
-=======
-    const list = ls<string[]>(`propvault_saved_${uid}`, []).filter(id => id !== listingId);
-    lsSet(`propvault_saved_${uid}`, list);
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
     return;
   }
   await deleteDoc(doc(db!, 'savedProperties', `${uid}_${listingId}`));
@@ -205,11 +179,7 @@ export async function getSavedPropertyIds(uid: string): Promise<string[]> {
   return snap.docs.map(d => d.data().listingId as string);
 }
 
-<<<<<<< HEAD
 // ── SAVED SEARCHES ────────────────────────────────────────────────────────────
-=======
-// ── Saved Searches ───────────────────────────────────────────────────────────
->>>>>>> a65abc0b4b0b0d18843dcc04ebfbc4e6dc141175
 export async function saveSavedSearch(uid: string, search: Omit<SavedSearch, 'id' | 'createdAt'>): Promise<void> {
   if (isDemoMode) {
     const id = `ss-${Date.now()}`;
